@@ -1,0 +1,31 @@
+---
+import { site, schedule } from '../site.config';
+
+const openingHours = schedule
+  .filter((item) => !item.time.includes('À compléter'))
+  .map((item) => `${item.day} ${item.time}`);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': ['SportsActivityLocation', 'SportsOrganization'],
+  name: site.name,
+  alternateName: site.shortName,
+  sport: 'Krav Maga',
+  description: `Association de Krav Maga et self-défense à ${site.city}. Cours pour adultes, débutants et pratiquants souhaitant apprendre à se protéger.` ,
+  url: site.domain,
+  email: site.email,
+  telephone: site.phone === 'À compléter' ? undefined : site.phone,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.address === 'À compléter' ? undefined : site.address,
+    addressLocality: site.city,
+    postalCode: site.postalCode,
+    addressRegion: site.region,
+    addressCountry: site.country
+  },
+  areaServed: [site.city, ...site.nearbyCities],
+  openingHours: openingHours.length ? openingHours : undefined,
+  sameAs: [site.facebook, site.instagram].filter(Boolean)
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

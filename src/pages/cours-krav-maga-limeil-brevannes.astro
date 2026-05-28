@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../site.config';
+---
+<BaseLayout
+  title="Cours de Krav Maga à Limeil-Brévannes"
+  description="Découvrez les cours de Krav Maga à Limeil-Brévannes : self-défense, bases pour débutants, travail technique et mises en situation."
+>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Cours de Krav Maga</p>
+      <h1>Cours de Krav Maga à {site.city}</h1>
+      <p class="lead">Les cours de {site.name} ont pour but d’apprendre des réactions simples, utiles et répétables face à une situation d’agression ou de danger.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container grid-2">
+      <article class="card">
+        <h2>Ce que l’on travaille</h2>
+        <ul class="list">
+          <li>Position de garde, déplacements et gestion de la distance.</li>
+          <li>Réactions face aux saisies, poussées et menaces simples.</li>
+          <li>Protections, frappes de base et sorties de zone dangereuse.</li>
+          <li>Gestion du stress, observation et décision rapide.</li>
+          <li>Mises en situation progressives, adaptées au niveau du groupe.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>Débuter sans pression</h2>
+        <p>Le premier objectif est de comprendre les bases et de pratiquer avec régularité. Il n’est pas nécessaire d’être déjà sportif ou d’avoir fait de la boxe.</p>
+        <p>Les exercices sont expliqués étape par étape. Le rythme dépend du groupe, de l’âge et du niveau des pratiquants.</p>
+      </article>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container cta">
+      <h2>Vous cherchez un cours de self-défense près de {site.city} ?</h2>
+      <p>Contactez l’association pour connaître les prochains créneaux disponibles et les conditions d’inscription.</p>
+      <a class="btn btn-primary" href="/inscription-essai/">Demander un cours d’essai</a>
+    </div>
+  </section>
+</BaseLayout>

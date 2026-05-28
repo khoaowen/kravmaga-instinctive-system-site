@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../site.config';
+---
+<BaseLayout
+  title="Politique de confidentialité"
+  description="Politique de confidentialité du site Krav Maga Instinctive System."
+>
+  <section class="hero">
+    <div class="container legal-content">
+      <p class="eyebrow">Données personnelles</p>
+      <h1>Politique de confidentialité</h1>
+      <p>Cette page explique quelles données peuvent être traitées lorsque vous contactez l’association.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container legal-content">
+      <h2>Contact par email</h2>
+      <p>Lorsque vous envoyez un email à l’association, les informations transmises sont utilisées uniquement pour répondre à votre demande : cours d’essai, inscription, horaires ou question pratique.</p>
+
+      <h2>Données collectées</h2>
+      <p>Le site ne contient pas de formulaire dans cette version. Les données sont transmises volontairement par email.</p>
+
+      <h2>Durée de conservation</h2>
+      <p>Les messages peuvent être conservés le temps nécessaire au suivi de la demande et à la gestion de l’association.</p>
+
+      <h2>Droits</h2>
+      <p>Vous pouvez demander l’accès, la rectification ou la suppression de vos données en écrivant à <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+
+      <h2>Statistiques</h2>
+      <p>Si Cloudflare Web Analytics est activé, l’association utilise des statistiques globales de visite sans cookies publicitaires.</p>
+    </div>
+  </section>
+</BaseLayout>

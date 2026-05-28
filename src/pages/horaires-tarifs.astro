@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { schedule, prices } from '../site.config';
+---
+<BaseLayout
+  title="Horaires et tarifs Krav Maga"
+  description="Horaires, tarifs et informations pratiques pour les cours de Krav Maga Instinctive System à Limeil-Brévannes."
+>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Informations pratiques</p>
+      <h1>Horaires et tarifs</h1>
+      <p class="lead">Retrouvez les créneaux d’entraînement, les tarifs de cotisation et les informations à prévoir pour l’inscription.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container grid-2">
+      <div class="card">
+        <h2>Horaires des cours</h2>
+        <table class="table">
+          <thead><tr><th>Jour</th><th>Horaire</th><th>Public</th></tr></thead>
+          <tbody>
+            {schedule.map((item) => <tr><td>{item.day}</td><td>{item.time}</td><td>{item.audience}</td></tr>)}
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h2>Tarifs</h2>
+        <table class="table">
+          <thead><tr><th>Type</th><th>Montant</th></tr></thead>
+          <tbody>
+            {prices.map((item) => <tr><td>{item.label}</td><td>{item.amount}</td></tr>)}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="notice">
+        <strong>À compléter :</strong> remplacez les horaires et les tarifs dans le fichier <code>src/site.config.ts</code>. Évitez de laisser des informations approximatives en ligne.
+      </div>
+    </div>
+  </section>
+</BaseLayout>

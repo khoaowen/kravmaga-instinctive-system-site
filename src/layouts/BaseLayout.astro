@@ -1,0 +1,174 @@
+---
+import Seo from '../components/Seo.astro';
+import JsonLd from '../components/JsonLd.astro';
+import { site } from '../site.config';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const nav = [
+  { href: '/', label: 'Accueil' },
+  { href: '/cours-krav-maga-limeil-brevannes/', label: 'Cours' },
+  { href: '/horaires-tarifs/', label: 'Horaires & tarifs' },
+  { href: '/inscription-essai/', label: 'Cours d’essai' },
+  { href: '/lieu/', label: 'Lieu' },
+  { href: '/faq/', label: 'FAQ' }
+];
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <Seo title={title} description={description} />
+    <JsonLd />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <style is:global>
+      :root {
+        --bg: #0b0f14;
+        --panel: #111821;
+        --panel-2: #172231;
+        --text: #f5f7fb;
+        --muted: #b8c0cc;
+        --line: rgba(255, 255, 255, 0.12);
+        --accent: #f0b429;
+        --accent-2: #ffe8a6;
+        --max: 1120px;
+        --radius: 20px;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top left, rgba(240, 180, 41, 0.12), transparent 30%), var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      a { color: inherit; }
+      img { max-width: 100%; height: auto; }
+      .skip-link {
+        position: absolute; left: -999px; top: 8px; padding: 8px 12px; background: var(--accent); color: #101010;
+      }
+      .skip-link:focus { left: 8px; z-index: 1000; }
+      .site-header {
+        position: sticky; top: 0; z-index: 20;
+        backdrop-filter: blur(18px);
+        background: rgba(11, 15, 20, 0.8);
+        border-bottom: 1px solid var(--line);
+      }
+      .header-inner {
+        max-width: var(--max); margin: 0 auto; padding: 14px 20px;
+        display: flex; align-items: center; justify-content: space-between; gap: 20px;
+      }
+      .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 800; letter-spacing: 0.02em; }
+      .brand-mark {
+        display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px;
+        background: linear-gradient(135deg, var(--accent), #d66f0f); color: #111; font-weight: 900;
+      }
+      .brand small { display: block; color: var(--muted); font-weight: 600; letter-spacing: 0; }
+      .nav { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+      .nav a { text-decoration: none; color: var(--muted); font-weight: 700; font-size: 0.95rem; }
+      .nav a:hover { color: var(--text); }
+      .container { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+      .hero { padding: 86px 0 60px; }
+      .hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr); gap: 28px; align-items: center; }
+      .eyebrow { color: var(--accent-2); font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.82rem; }
+      h1, h2, h3 { line-height: 1.1; margin: 0 0 16px; }
+      h1 { font-size: clamp(2.35rem, 6vw, 5rem); letter-spacing: -0.06em; }
+      h2 { font-size: clamp(1.9rem, 3vw, 3rem); letter-spacing: -0.04em; }
+      h3 { font-size: 1.35rem; }
+      p { margin: 0 0 18px; color: var(--muted); }
+      .lead { font-size: clamp(1.08rem, 1.8vw, 1.35rem); max-width: 760px; }
+      .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+        padding: 13px 18px; border-radius: 999px; text-decoration: none; font-weight: 800;
+        border: 1px solid transparent;
+      }
+      .btn-primary { background: var(--accent); color: #121212; }
+      .btn-secondary { border-color: var(--line); color: var(--text); background: rgba(255,255,255,0.04); }
+      .card {
+        background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+        border: 1px solid var(--line); border-radius: var(--radius); padding: 24px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.24);
+      }
+      .hero-card { min-height: 360px; display: grid; align-content: end; position: relative; overflow: hidden; }
+      .hero-card::before {
+        content: ''; position: absolute; inset: 0;
+        background:
+          linear-gradient(135deg, rgba(240,180,41,0.3), transparent 40%),
+          radial-gradient(circle at 80% 20%, rgba(255,255,255,0.16), transparent 20%);
+      }
+      .hero-card > * { position: relative; }
+      .section { padding: 64px 0; }
+      .section-header { max-width: 780px; margin-bottom: 28px; }
+      .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+      .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+      .list { display: grid; gap: 12px; padding: 0; margin: 0; list-style: none; }
+      .list li { padding-left: 28px; position: relative; color: var(--muted); }
+      .list li::before { content: '•'; position: absolute; left: 8px; top: -2px; color: var(--accent); font-size: 1.5rem; }
+      .table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 14px; }
+      .table th, .table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--line); color: var(--muted); }
+      .table th { color: var(--text); background: rgba(255,255,255,0.04); }
+      .notice { border-left: 4px solid var(--accent); padding: 16px 18px; background: rgba(240, 180, 41, 0.1); border-radius: 14px; }
+      .pill-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+      .pill { padding: 8px 12px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); background: rgba(255,255,255,0.04); }
+      .cta { background: linear-gradient(135deg, rgba(240,180,41,0.18), rgba(255,255,255,0.04)); border: 1px solid var(--line); border-radius: calc(var(--radius) + 6px); padding: 34px; }
+      .site-footer { border-top: 1px solid var(--line); margin-top: 60px; padding: 34px 0; color: var(--muted); }
+      .footer-grid { display: grid; grid-template-columns: 1.2fr 0.8fr 0.8fr; gap: 24px; }
+      .footer-grid a { color: var(--muted); text-decoration: none; display: block; margin-bottom: 8px; }
+      .footer-grid a:hover { color: var(--text); }
+      .legal-content { max-width: 860px; }
+      .legal-content h2 { font-size: 1.6rem; margin-top: 32px; }
+      @media (max-width: 860px) {
+        .header-inner { align-items: flex-start; flex-direction: column; }
+        .hero-grid, .grid-2, .grid-3, .footer-grid { grid-template-columns: 1fr; }
+        .hero { padding-top: 50px; }
+        .nav { gap: 10px; }
+        .nav a { font-size: 0.9rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="/" aria-label={`${site.name} - Accueil`}>
+          <span class="brand-mark">KM</span>
+          <span>{site.name}<small>{site.city}</small></span>
+        </a>
+        <nav class="nav" aria-label="Navigation principale">
+          {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+        </nav>
+      </div>
+    </header>
+    <main id="contenu">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <strong>{site.name}</strong>
+          <p>Association de Krav Maga et self-défense à {site.city}. Cours pour débutants et pratiquants souhaitant progresser dans un cadre sérieux.</p>
+        </div>
+        <div>
+          <strong>Contact</strong>
+          <a href={`mailto:${site.email}`}>{site.email}</a>
+          <span>{site.phone}</span><br />
+          <span>{site.address}</span>
+        </div>
+        <div>
+          <strong>Informations</strong>
+          <a href="/mentions-legales/">Mentions légales</a>
+          <a href="/confidentialite/">Confidentialité</a>
+          <a href="/faq/">FAQ</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../site.config';
+---
+<BaseLayout
+  title="Mentions légales"
+  description="Mentions légales du site Krav Maga Instinctive System à Limeil-Brévannes."
+>
+  <section class="hero">
+    <div class="container legal-content">
+      <p class="eyebrow">Informations légales</p>
+      <h1>Mentions légales</h1>
+      <p>Cette page doit être complétée avant la mise en ligne définitive.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container legal-content">
+      <h2>Éditeur du site</h2>
+      <p>Nom : {site.name}</p>
+      <p>Forme : association loi 1901</p>
+      <p>Siège social : À compléter</p>
+      <p>Numéro RNA : À compléter</p>
+      <p>SIREN/SIRET : À compléter si disponible</p>
+      <p>Email : <a href={`mailto:${site.email}`}>{site.email}</a></p>
+
+      <h2>Directeur de la publication</h2>
+      <p>À compléter.</p>
+
+      <h2>Hébergement</h2>
+      <p>Le site est hébergé par Cloudflare Pages, service fourni par Cloudflare, Inc.</p>
+      <p>Adresse de l’hébergeur : Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, États-Unis.</p>
+
+      <h2>Propriété intellectuelle</h2>
+      <p>Les textes, images, logos et contenus du site appartiennent à l’association ou à leurs auteurs respectifs. Toute reproduction sans autorisation est interdite.</p>
+
+      <h2>Responsabilité</h2>
+      <p>Les informations publiées sur ce site sont fournies à titre indicatif. L’association peut les modifier à tout moment.</p>
+    </div>
+  </section>
+</BaseLayout>

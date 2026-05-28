@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../site.config';
+const faqs = [
+  ['Faut-il avoir déjà pratiqué un sport de combat ?', 'Non. Les débutants peuvent commencer. Les bases sont reprises progressivement.'],
+  ['Le Krav Maga est-il adapté aux femmes ?', 'Oui. Le travail porte sur la protection, la distance, les réflexes et les sorties de situation, pas sur la force brute.'],
+  ['Peut-on faire un cours d’essai ?', 'Oui, il faut contacter l’association avant de venir afin de confirmer le créneau et les conditions.'],
+  ['Quelle tenue prévoir ?', 'Une tenue de sport confortable, une bouteille d’eau et des chaussures adaptées si la salle le demande.'],
+  ['À partir de quel âge peut-on commencer ?', 'À compléter selon le règlement de l’association et les créneaux proposés.'],
+  ['Les cours ont-ils lieu pendant les vacances scolaires ?', 'À compléter selon le calendrier de l’association.']
+];
+---
+<BaseLayout
+  title="FAQ Krav Maga à Limeil-Brévannes"
+  description="Questions fréquentes sur les cours de Krav Maga à Limeil-Brévannes : débutants, cours d’essai, tenue, âge et inscription."
+>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Questions fréquentes</p>
+      <h1>FAQ Krav Maga à {site.city}</h1>
+      <p class="lead">Les réponses aux questions courantes avant de venir faire un cours d’essai.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container grid-2">
+      {faqs.map(([question, answer]) => (
+        <article class="card">
+          <h2>{question}</h2>
+          <p>{answer}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

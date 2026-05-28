@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../site.config';
+---
+<BaseLayout
+  title="Lieu des cours de Krav Maga à Limeil-Brévannes"
+  description="Lieu d’entraînement de Krav Maga Instinctive System à Limeil-Brévannes, accès, adresse et informations pratiques."
+>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Accès</p>
+      <h1>Lieu d’entraînement à {site.city}</h1>
+      <p class="lead">Les cours ont lieu à Limeil-Brévannes. L’adresse exacte, l’accès et les consignes de stationnement sont à compléter avant publication.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container grid-2">
+      <div class="card">
+        <h2>Adresse</h2>
+        <p><strong>{site.address}</strong></p>
+        <p>Ajoutez ici le nom du gymnase, la salle, l’entrée à utiliser et les indications utiles pour les nouveaux élèves.</p>
+        {site.googleMapsUrl ? <a class="btn btn-primary" href={site.googleMapsUrl}>Ouvrir dans Google Maps</a> : <p class="notice">À compléter : lien Google Maps.</p>}
+      </div>
+      <div class="card">
+        <h2>Communes proches</h2>
+        <p>Le club peut intéresser les personnes qui cherchent du Krav Maga près de :</p>
+        <div class="pill-list">
+          {[site.city, ...site.nearbyCities].map((city) => <span class="pill">{city}</span>)}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

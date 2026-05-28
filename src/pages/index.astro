@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, schedule } from '../site.config';
+---
+<BaseLayout
+  title="Krav Maga à Limeil-Brévannes"
+  description="Cours de Krav Maga et self-défense à Limeil-Brévannes avec Krav Maga Instinctive System. Cours pour adultes, débutants et pratiquants de tous niveaux."
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Krav Maga à {site.city}</p>
+        <h1>Apprendre à se défendre avec méthode et sang-froid.</h1>
+        <p class="lead">
+          {site.name} propose des cours de Krav Maga et de self-défense à {site.city}, pour adultes, débutants et pratiquants souhaitant progresser dans un cadre clair, sérieux et accessible.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="/inscription-essai/">{site.trialLabel}</a>
+          <a class="btn btn-secondary" href="/horaires-tarifs/">Voir les horaires</a>
+        </div>
+      </div>
+      <aside class="card hero-card" aria-label="Informations principales">
+        <h2>Reprise et inscriptions</h2>
+        <p>Les informations de rentrée, horaires et tarifs sont à compléter. Ajoutez ici un message simple pour les nouveaux élèves.</p>
+        <a class="btn btn-primary" href={`mailto:${site.email}`}>Contacter l’association</a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Pour qui ?</p>
+        <h2>Un cours adapté aux débutants et aux pratiquants motivés.</h2>
+        <p>Le Krav Maga est une méthode de self-défense directe. L’objectif est d’apprendre à réagir, se protéger, garder de la distance et sortir d’une situation dangereuse.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <h3>Débutants acceptés</h3>
+          <p>Aucune expérience en sport de combat n’est nécessaire pour commencer. Les bases sont reprises progressivement.</p>
+        </article>
+        <article class="card">
+          <h3>Self-défense concrète</h3>
+          <p>Travail sur les distances, les déplacements, les réflexes de protection et les mises en situation simples.</p>
+        </article>
+        <article class="card">
+          <h3>Condition physique</h3>
+          <p>Les séances permettent aussi de développer endurance, coordination et confiance, sans esprit de compétition obligatoire.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-2">
+      <div class="card">
+        <h2>Cours à Limeil-Brévannes</h2>
+        <p>L’association accueille les pratiquants de {site.city} et des communes voisines.</p>
+        <div class="pill-list">
+          {[site.city, ...site.nearbyCities].map((city) => <span class="pill">{city}</span>)}
+        </div>
+      </div>
+      <div class="card">
+        <h2>Horaires</h2>
+        <table class="table">
+          <thead><tr><th>Jour</th><th>Horaire</th><th>Public</th></tr></thead>
+          <tbody>
+            {schedule.map((item) => <tr><td>{item.day}</td><td>{item.time}</td><td>{item.audience}</td></tr>)}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cta">
+      <p class="eyebrow">Essayer avant de s’inscrire</p>
+      <h2>Venez faire un cours d’essai.</h2>
+      <p>Envoyez un message avec votre nom, votre âge, votre niveau et le créneau souhaité. Nous vous répondrons avec les informations pratiques.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/inscription-essai/">Demander un cours d’essai</a>
+        <a class="btn btn-secondary" href="/faq/">Lire les questions fréquentes</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
