@@ -2,7 +2,7 @@
 
 ## Avant publication
 
-- Remplacer le domaine dans `astro.config.mjs` si le domaine choisi n'est pas `kravmaga-limeil.fr`.
+- Vérifier que le domaine canonique dans `astro.config.mjs` est `https://kmis-kravmaga.fr`.
 - Remplacer les informations dans `src/site.config.ts` : adresse, téléphone, email, horaires, tarifs, liens sociaux.
 - Compléter les mentions légales.
 - Ajouter au moins 3 vraies photos : salle, cours, équipe.
@@ -34,4 +34,4 @@
 - Mettre de faux avis.
 - Publier une adresse approximative.
 - Copier du contenu d’un autre club.
-- Laisser des pages “À compléter” visibles trop longtemps.
+- Laisser des pages avec des informations manquantes visibles trop longtemps.

@@ -47,7 +47,7 @@ astro.config.mjs
 Remplacer :
 
 ```js
-site: 'https://kravmaga-limeil.fr'
+site: 'https://kmis-kravmaga.fr'
 ```
 
 par le vrai domaine.

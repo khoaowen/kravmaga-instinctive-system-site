@@ -2,7 +2,7 @@
 import { site, schedule } from '../site.config';
 
 const openingHours = schedule
-  .filter((item) => !item.time.includes('À compléter'))
+  .filter((item) => !item.time.includes('communiqués prochainement'))
   .map((item) => `${item.day} ${item.time}`);
 
 const jsonLd = {
@@ -14,10 +14,16 @@ const jsonLd = {
   description: `Association de Krav Maga et self-défense à ${site.city}. Cours pour adultes, débutants et pratiquants souhaitant apprendre à se protéger.` ,
   url: site.domain,
   email: site.email,
-  telephone: site.phone === 'À compléter' ? undefined : site.phone,
+  telephone: site.phone || undefined,
+  hasMap: site.googleMapsUrl || undefined,
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: site.latitude,
+    longitude: site.longitude
+  },
   address: {
     '@type': 'PostalAddress',
-    streetAddress: site.address === 'À compléter' ? undefined : site.address,
+    streetAddress: site.streetAddress,
     addressLocality: site.city,
     postalCode: site.postalCode,
     addressRegion: site.region,
@@ -28,4 +34,4 @@ const jsonLd = {
   sameAs: [site.facebook, site.instagram].filter(Boolean)
 };
 ---
-<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

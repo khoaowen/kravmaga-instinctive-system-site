@@ -10,7 +10,7 @@ import { site } from '../site.config';
     <div class="container">
       <p class="eyebrow">Accès</p>
       <h1>Lieu d’entraînement à {site.city}</h1>
-      <p class="lead">Les cours ont lieu à Limeil-Brévannes. L’adresse exacte, l’accès et les consignes de stationnement sont à compléter avant publication.</p>
+      <p class="lead">Les cours ont lieu à Limeil-Brévannes, à l’adresse indiquée sur la fiche Google Maps de l’association.</p>
     </div>
   </section>
   <section class="section">
@@ -18,8 +18,8 @@ import { site } from '../site.config';
       <div class="card">
         <h2>Adresse</h2>
         <p><strong>{site.address}</strong></p>
-        <p>Ajoutez ici le nom du gymnase, la salle, l’entrée à utiliser et les indications utiles pour les nouveaux élèves.</p>
-        {site.googleMapsUrl ? <a class="btn btn-primary" href={site.googleMapsUrl}>Ouvrir dans Google Maps</a> : <p class="notice">À compléter : lien Google Maps.</p>}
+        <p>Contactez l’association pour les informations d’inscription, les horaires confirmés et les consignes d’accueil.</p>
+        {site.googleMapsUrl ? <a class="btn btn-primary" href={site.googleMapsUrl}>Ouvrir dans Google Maps</a> : <p class="notice">Lieu d’entraînement communiqué prochainement</p>}
       </div>
       <div class="card">
         <h2>Communes proches</h2>

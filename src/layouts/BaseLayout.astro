@@ -139,7 +139,7 @@ const nav = [
     <header class="site-header">
       <div class="header-inner">
         <a class="brand" href="/" aria-label={`${site.name} - Accueil`}>
-          <span class="brand-mark">KM</span>
+          <span class="brand-mark">KMIS</span>
           <span>{site.name}<small>{site.city}</small></span>
         </a>
         <nav class="nav" aria-label="Navigation principale">
@@ -159,7 +159,7 @@ const nav = [
         <div>
           <strong>Contact</strong>
           <a href={`mailto:${site.email}`}>{site.email}</a>
-          <span>{site.phone}</span><br />
+          {site.phone && <><span>{site.phone}</span><br /></>}
           <span>{site.address}</span>
         </div>
         <div>

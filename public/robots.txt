@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kravmaga-limeil.fr/sitemap-index.xml
+Sitemap: https://kmis-kravmaga.fr/sitemap-index.xml
