@@ -18,21 +18,16 @@ import { site } from '../site.config';
       <h2>Éditeur du site</h2>
       <p>Nom : {site.name}</p>
       <p>Forme juridique : {site.legalForm}</p>
-      <p>Date de création de l’association : {site.creationDate}</p>
       <p>Siège social : {site.registeredAddress}</p>
       <p>Numéro RNA : {site.rna}</p>
-      <p>SIREN/SIRET : {site.siren} / {site.siret}</p>
-      <p>Activité principale : {site.activityLabel} ({site.activityCode})</p>
-      <p>Effectif salarié : {site.employeeStatus}</p>
-      <p>Statut ESS : {site.essStatus}</p>
+      <p>SIREN : {site.siren}</p>
       <p>Email : <a href={`mailto:${site.email}`}>{site.email}</a></p>
 
       <h2>Directeur de la publication</h2>
       <p>Association {site.name}.</p>
 
       <h2>Hébergement</h2>
-      <p>Le site est hébergé par Cloudflare Pages, service fourni par Cloudflare, Inc.</p>
-      <p>Adresse de l’hébergeur : Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, États-Unis.</p>
+      <p>Le site est hébergé par Cloudflare.</p>
 
       <h2>Propriété intellectuelle</h2>
       <p>Les textes, images, logos et contenus du site appartiennent à l’association ou à leurs auteurs respectifs. Toute reproduction sans autorisation est interdite.</p>
