@@ -127,6 +127,11 @@ const nav = [
         border-radius: 50%; object-fit: cover; align-self: stretch;
         border: 1px solid rgba(255, 255, 255, 0.18); background: #111;
       }
+      .footer-title {
+        display: block; margin-bottom: 10px; color: var(--text);
+        font-size: 0.82rem; font-weight: 800; text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
       .footer-grid a { color: var(--muted); text-decoration: none; display: block; margin-bottom: 8px; }
       .footer-grid a:hover { color: var(--text); }
       .legal-content { max-width: 860px; }
@@ -161,17 +166,17 @@ const nav = [
       <div class="container footer-grid">
         <img class="footer-logo" src="/logo-kmis.png" alt="" width="128" height="128" />
         <div>
-          <strong>{site.brandName}</strong>
+          <strong class="footer-title">{site.brandName}</strong>
           <p>Association de Krav Maga et self-défense à {site.city}. Cours pour débutants et pratiquants souhaitant progresser dans un cadre sérieux.</p>
         </div>
         <div>
-          <strong>Contact</strong>
+          <strong class="footer-title">Contact</strong>
           <a href={`mailto:${site.email}`}>{site.email}</a>
           {site.phone && <><span>{site.phone}</span><br /></>}
           <span>{site.address}</span>
         </div>
         <div>
-          <strong>Informations</strong>
+          <strong class="footer-title">Informations</strong>
           <a href="/mentions-legales/">Mentions légales</a>
           <a href="/confidentialite/">Confidentialité</a>
           <a href="/faq/">FAQ</a>
