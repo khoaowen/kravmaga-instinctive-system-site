@@ -9,6 +9,8 @@ export const site = {
   country: 'FR',
   address: '22 Rue Gutenberg, 94450 Limeil-Brévannes',
   streetAddress: '22 Rue Gutenberg',
+  registeredAddress: '34 Q avenue de la Sablière, 94450 Limeil-Brévannes',
+  registeredStreetAddress: '34 Q avenue de la Sablière',
   phone: '',
   email: 'contact@kmis-kravmaga.fr',
   whatsapp: '',
@@ -21,6 +23,13 @@ export const site = {
   rna: 'W921004569',
   siren: '912 313 384',
   siret: '912 313 384 00022',
+  legalForm: 'Association déclarée',
+  activityCode: '93.12Z',
+  activityLabel: 'Activités de clubs de sports',
+  creationDate: '25/02/2016',
+  registeredEstablishmentCreationDate: '07/07/2023',
+  employeeStatus: 'Unité non employeuse',
+  essStatus: 'Structure appartenant au champ de l’économie sociale et solidaire',
   trialLabel: 'Demander un cours d’essai',
   nearbyCities: ['Boissy-Saint-Léger', 'Valenton', 'Bonneuil-sur-Marne', 'Créteil', 'Sucy-en-Brie', 'Yerres', 'Villeneuve-Saint-Georges']
 };

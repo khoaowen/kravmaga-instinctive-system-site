@@ -17,10 +17,14 @@ import { site } from '../site.config';
     <div class="container legal-content">
       <h2>Éditeur du site</h2>
       <p>Nom : {site.name}</p>
-      <p>Forme : association loi 1901</p>
-      <p>Siège social : {site.address}</p>
+      <p>Forme juridique : {site.legalForm}</p>
+      <p>Date de création de l’association : {site.creationDate}</p>
+      <p>Siège social : {site.registeredAddress}</p>
       <p>Numéro RNA : {site.rna}</p>
       <p>SIREN/SIRET : {site.siren} / {site.siret}</p>
+      <p>Activité principale : {site.activityLabel} ({site.activityCode})</p>
+      <p>Effectif salarié : {site.employeeStatus}</p>
+      <p>Statut ESS : {site.essStatus}</p>
       <p>Email : <a href={`mailto:${site.email}`}>{site.email}</a></p>
 
       <h2>Directeur de la publication</h2>
