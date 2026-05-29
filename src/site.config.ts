@@ -1,5 +1,6 @@
 export const site = {
   name: 'Krav Maga Instinctive System',
+  brandName: 'KMIS - Krav Maga Instinctive System',
   shortName: 'KMIS Limeil-Brévannes',
   domain: 'https://kmis-kravmaga.fr',
   city: 'Limeil-Brévannes',

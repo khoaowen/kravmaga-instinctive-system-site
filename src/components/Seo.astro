@@ -9,8 +9,8 @@ interface Props {
   noindex?: boolean;
 }
 
-const { title, description, canonical = Astro.url.pathname, image = '/social-card.svg', noindex = false } = Astro.props;
-const pageTitle = title.includes(site.name) ? title : `${title} | ${site.name}`;
+const { title, description, canonical = Astro.url.pathname, image = '/logo-kmis.png', noindex = false } = Astro.props;
+const pageTitle = title.includes('KMIS') ? title : `${title} | ${site.brandName}`;
 const canonicalUrl = new URL(canonical, site.domain).toString();
 const imageUrl = new URL(image, site.domain).toString();
 ---

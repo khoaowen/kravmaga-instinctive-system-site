@@ -25,7 +25,7 @@ const nav = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <Seo title={title} description={description} />
     <JsonLd />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <style is:global>
       :root {
@@ -66,9 +66,10 @@ const nav = [
         display: flex; align-items: center; justify-content: space-between; gap: 20px;
       }
       .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 800; letter-spacing: 0.02em; }
-      .brand-mark {
-        display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px;
-        background: linear-gradient(135deg, var(--accent), #d66f0f); color: #111; font-weight: 900;
+      .brand-logo {
+        display: block; width: 46px; height: 46px; border-radius: 50%;
+        object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.22);
+        background: #111;
       }
       .brand small { display: block; color: var(--muted); font-weight: 600; letter-spacing: 0; }
       .nav { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
@@ -138,9 +139,9 @@ const nav = [
     <a class="skip-link" href="#contenu">Aller au contenu</a>
     <header class="site-header">
       <div class="header-inner">
-        <a class="brand" href="/" aria-label={`${site.name} - Accueil`}>
-          <span class="brand-mark">KMIS</span>
-          <span>{site.name}<small>{site.city}</small></span>
+        <a class="brand" href="/" aria-label={`${site.brandName} - Accueil`}>
+          <img class="brand-logo" src="/logo-kmis.png" alt="" width="46" height="46" />
+          <span>{site.brandName}<small>{site.city}</small></span>
         </a>
         <nav class="nav" aria-label="Navigation principale">
           {nav.map((item) => <a href={item.href}>{item.label}</a>)}
