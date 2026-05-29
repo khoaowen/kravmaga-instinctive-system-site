@@ -121,7 +121,12 @@ const nav = [
       .pill { padding: 8px 12px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); background: rgba(255,255,255,0.04); }
       .cta { background: linear-gradient(135deg, rgba(240,180,41,0.18), rgba(255,255,255,0.04)); border: 1px solid var(--line); border-radius: calc(var(--radius) + 6px); padding: 34px; }
       .site-footer { border-top: 1px solid var(--line); margin-top: 60px; padding: 34px 0; color: var(--muted); }
-      .footer-grid { display: grid; grid-template-columns: 1.2fr 0.8fr 0.8fr; gap: 24px; }
+      .footer-grid { display: grid; grid-template-columns: 140px minmax(0, 1.2fr) minmax(190px, 0.8fr) minmax(160px, 0.7fr); gap: 24px; align-items: stretch; }
+      .footer-logo {
+        width: 128px; height: 100%; min-height: 132px; max-height: 180px;
+        border-radius: 50%; object-fit: cover; align-self: stretch;
+        border: 1px solid rgba(255, 255, 255, 0.18); background: #111;
+      }
       .footer-grid a { color: var(--muted); text-decoration: none; display: block; margin-bottom: 8px; }
       .footer-grid a:hover { color: var(--text); }
       .legal-content { max-width: 860px; }
@@ -129,6 +134,7 @@ const nav = [
       @media (max-width: 860px) {
         .header-inner { align-items: flex-start; flex-direction: column; }
         .hero-grid, .grid-2, .grid-3, .footer-grid { grid-template-columns: 1fr; }
+        .footer-logo { width: 120px; height: 120px; min-height: 0; justify-self: start; }
         .hero { padding-top: 50px; }
         .nav { gap: 10px; }
         .nav a { font-size: 0.9rem; }
@@ -153,8 +159,9 @@ const nav = [
     </main>
     <footer class="site-footer">
       <div class="container footer-grid">
+        <img class="footer-logo" src="/logo-kmis.png" alt="" width="128" height="128" />
         <div>
-          <strong>{site.name}</strong>
+          <strong>{site.brandName}</strong>
           <p>Association de Krav Maga et self-défense à {site.city}. Cours pour débutants et pratiquants souhaitant progresser dans un cadre sérieux.</p>
         </div>
         <div>
