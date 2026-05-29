@@ -14,19 +14,11 @@ import { site } from '../site.config';
     </div>
   </section>
   <section class="section">
-    <div class="container grid-2">
+    <div class="container">
       <div class="card">
         <h2>Adresse</h2>
         <p><strong>{site.address}</strong></p>
         <p>Contactez l’association pour les informations d’inscription, les horaires confirmés et les consignes d’accueil.</p>
-        {site.googleMapsUrl ? <a class="btn btn-primary" href={site.googleMapsUrl}>Ouvrir dans Google Maps</a> : <p class="notice">Lieu d’entraînement communiqué prochainement</p>}
-      </div>
-      <div class="card">
-        <h2>Communes proches</h2>
-        <p>Le club peut intéresser les personnes qui cherchent du Krav Maga près de :</p>
-        <div class="pill-list">
-          {[site.city, ...site.nearbyCities].map((city) => <span class="pill">{city}</span>)}
-        </div>
       </div>
     </div>
   </section>
