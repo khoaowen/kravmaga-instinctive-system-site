@@ -18,6 +18,7 @@ export const site = {
   instagram: '',
   helloAsso: '',
   googleMapsUrl: 'https://maps.app.goo.gl/RunQSBYYZWrBC9sUA',
+  googleMapsEmbedUrl: 'https://www.google.com/maps?q=22%20Rue%20Gutenberg%2C%2094450%20Limeil-Br%C3%A9vannes&output=embed',
   latitude: 48.743484,
   longitude: 2.481776,
   rna: 'W921004569',

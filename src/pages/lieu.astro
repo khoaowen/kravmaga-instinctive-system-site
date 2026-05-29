@@ -30,4 +30,37 @@ import { site } from '../site.config';
       </div>
     </div>
   </section>
+  {site.googleMapsEmbedUrl && (
+    <section class="section">
+      <div class="container">
+        <div class="map-embed">
+          <iframe
+            title={`Carte Google Maps - ${site.address}`}
+            src={site.googleMapsEmbedUrl}
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          />
+        </div>
+      </div>
+    </section>
+  )}
 </BaseLayout>
+
+<style>
+  .map-embed {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--panel);
+    min-height: 360px;
+  }
+
+  .map-embed iframe {
+    display: block;
+    width: 100%;
+    height: min(62vh, 520px);
+    min-height: 360px;
+    border: 0;
+  }
+</style>
