@@ -35,9 +35,8 @@ export const site = {
 };
 
 export const schedule = [
-  { day: 'Lundi', time: 'Horaires communiqués prochainement', audience: 'Adultes / débutants' },
-  { day: 'Mercredi', time: 'Horaires communiqués prochainement', audience: 'Adultes / tous niveaux' },
-  { day: 'Samedi', time: 'Horaires communiqués prochainement', audience: 'Cours technique / mise en situation' }
+  { day: 'Lundi', time: '20:30-22:00', audience: 'Tous niveaux' },
+  { day: 'Jeudi', time: '20:30-22:00', audience: 'Tous niveaux' }
 ];
 
 export const prices = [
