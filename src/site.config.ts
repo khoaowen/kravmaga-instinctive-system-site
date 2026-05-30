@@ -81,7 +81,7 @@ export const instructor = {
       date: 'Délivré en 2016'
     },
     {
-      title: 'Formateur des forces de l’ordre',
+      title: 'Moniteur GTPI – police municipale',
       detail: 'Moniteur en gestes et techniques professionnels d’intervention (GTPI) pour la police municipale.'
     },
     {
