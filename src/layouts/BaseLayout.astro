@@ -12,6 +12,7 @@ const { title, description } = Astro.props;
 const nav = [
   { href: '/', label: 'Accueil' },
   { href: '/cours-krav-maga-limeil-brevannes/', label: 'Cours' },
+  { href: '/instructeurs/', label: 'Instructeur' },
   { href: '/horaires-tarifs/', label: 'Horaires & tarifs' },
   { href: '/inscription-essai/', label: 'Cours d’essai' },
   { href: '/lieu/', label: 'Lieu' },
@@ -171,8 +172,9 @@ const nav = [
         </div>
         <div>
           <strong class="footer-title">Contact</strong>
+          {site.phone && <a href={`tel:${site.phoneHref}`}>{site.phone}</a>}
+          {site.whatsapp && <a href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noopener">WhatsApp</a>}
           <a href={`mailto:${site.email}`}>{site.email}</a>
-          {site.phone && <><span>{site.phone}</span><br /></>}
           <span>{site.address}</span>
         </div>
         <div>

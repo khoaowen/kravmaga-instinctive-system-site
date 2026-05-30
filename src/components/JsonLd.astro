@@ -1,5 +1,5 @@
 ---
-import { site, schedule } from '../site.config';
+import { site, schedule, instructor } from '../site.config';
 
 const openingHours = schedule
   .filter((item) => !item.time.includes('communiqués prochainement'))
@@ -14,7 +14,13 @@ const jsonLd = {
   description: `Association de Krav Maga et self-défense à ${site.city}. Cours pour adultes, débutants et pratiquants souhaitant apprendre à se protéger.` ,
   url: site.domain,
   email: site.email,
-  telephone: site.phone || undefined,
+  telephone: site.phoneHref || site.phone || undefined,
+  founder: {
+    '@type': 'Person',
+    name: instructor.name,
+    jobTitle: 'Instructeur de Krav Maga, éducateur sportif diplômé d’État',
+    image: new URL(instructor.photo, site.domain).href
+  },
   hasMap: site.googleMapsUrl || undefined,
   geo: {
     '@type': 'GeoCoordinates',

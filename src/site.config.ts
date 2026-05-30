@@ -11,9 +11,10 @@ export const site = {
   streetAddress: '22 Rue Gutenberg',
   registeredAddress: '34 Q avenue de la Sablière, 94450 Limeil-Brévannes',
   registeredStreetAddress: '34 Q avenue de la Sablière',
-  phone: '',
+  phone: '06 19 79 82 14',
+  phoneHref: '+33619798214',
   email: 'contact@kmis-kravmaga.fr',
-  whatsapp: '',
+  whatsapp: '33619798214',
   facebook: '',
   instagram: '',
   helloAsso: '',
@@ -45,4 +46,60 @@ export const prices = [
   { label: 'Cotisation annuelle adulte', amount: 'Tarifs communiqués prochainement' },
   { label: 'Cotisation annuelle ado', amount: 'Tarifs communiqués prochainement' },
   { label: 'Licence / assurance', amount: 'Tarifs communiqués prochainement' }
+];
+
+export const instructor = {
+  name: 'Laurent Mays',
+  role: 'Fondateur et instructeur',
+  photo: '/images/laurent-mays.jpg',
+  hometown: 'Sucy-en-Brie (94)',
+  // Phrase d'accroche reprise de ses propres mots (usage public validé).
+  motto: 'L’école ne t’apprend pas le métier. Rien ne remplace l’expérience du terrain.',
+  intro:
+    'Ceinture noire 4ᵉ dan et éducateur sportif diplômé d’État, Laurent forme les forces de l’ordre aux techniques d’intervention. À Limeil-Brévannes, il met cette expérience du terrain au service de tous, avec une exigence simple : que chacun reparte capable de se protéger, et de protéger les siens.',
+  // Crédibilité vérifiable plutôt que des scans de documents personnels.
+  credentials: [
+    {
+      title: 'Carte professionnelle d’éducateur sportif',
+      detail: 'Mention Krav Maga — délivrée par la Préfecture du Val-de-Marne, valable jusqu’en 2027.',
+      verifiable: true
+    },
+    {
+      title: 'Ceinture noire 4ᵉ dan de Krav Maga',
+      detail: 'Homologuée par la Fédération Française de Karaté et Disciplines Associées (FFKDA).'
+    },
+    {
+      title: 'Instructeur fédéral de Krav Maga',
+      detail: 'Fédération Française de Karaté (Ligue Île-de-France) et Fédération Française du Sport Travailliste.'
+    },
+    {
+      title: 'Enseignant professionnel d’arts martiaux (CQP)',
+      detail: 'Certificat de qualification professionnelle, mention Krav Maga.'
+    },
+    {
+      title: 'Formateur des forces de l’ordre',
+      detail: 'Intervenant auprès des professionnels de la sécurité aux techniques d’intervention.'
+    },
+    {
+      title: 'Instructeur bâton tactique — ASP',
+      detail: 'Certification internationale Armament Systems and Procedures (techniques d’intervention).'
+    },
+    {
+      title: 'Sauveteur — PSC1',
+      detail: 'Prévention et Secours Civiques de niveau 1 (Protection Civile).'
+    }
+  ],
+  // Lien officiel pour vérifier la carte professionnelle.
+  registryUrl: 'https://eapspublic.sports.gouv.fr'
+};
+
+// Les 7 principes du Krav Maga d’Imi Lichtenfeld, rédigés en clair.
+export const principles = [
+  { title: 'Éviter le danger', text: 'La meilleure défense reste de ne pas se retrouver dans une situation à risque. Vigilance et bon sens avant tout.' },
+  { title: 'S’appuyer sur les réflexes naturels', text: 'La méthode se construit sur les réactions instinctives du corps, faciles à retrouver sous stress.' },
+  { title: 'Aller au plus court', text: 'Se défendre et riposter par le chemin le plus direct, depuis la position où l’on se trouve, avec le minimum de risque.' },
+  { title: 'Désamorcer si possible', text: 'Selon la situation, chercher d’abord à dissuader et à faire baisser la tension par la parole.' },
+  { title: 'Viser l’efficacité', text: 'Utiliser les points sensibles du corps pour neutraliser une menace réelle et reprendre le contrôle.' },
+  { title: 'Utiliser son environnement', text: 'Tout objet à portée, puis les armes naturelles du corps, peuvent servir à se protéger.' },
+  { title: 'Pas de cadre sportif', text: 'Ni compétition, ni règles d’arbitrage : la seule règle est de se protéger et de rentrer chez soi en sécurité.' }
 ];

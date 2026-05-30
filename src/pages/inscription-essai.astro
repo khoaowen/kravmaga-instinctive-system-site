@@ -12,8 +12,11 @@ import { site } from '../site.config';
       <h1>Demander un cours d’essai</h1>
       <p class="lead">Un cours d’essai permet de découvrir l’ambiance, les exercices et le niveau du groupe avant de s’inscrire.</p>
       <div class="actions">
-        <a class="btn btn-primary" href={`mailto:${site.email}?subject=Cours d’essai Krav Maga à Limeil-Brévannes&body=Bonjour,%0D%0A%0D%0AJe souhaite faire un cours d’essai de Krav Maga.%0D%0A%0D%0ANom :%0D%0APrénom :%0D%0AÂge :%0D%0ANiveau sportif ou arts martiaux :%0D%0ACréneau souhaité :%0D%0A%0D%0ACordialement`}>Envoyer une demande</a>
-        <a class="btn btn-secondary" href="/lieu/">Voir le lieu</a>
+        {site.whatsapp && (
+          <a class="btn btn-primary" href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Bonjour, je souhaite faire un cours d’essai de Krav Maga à ' + site.city + '.')}`} target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+        )}
+        {site.phone && <a class="btn btn-secondary" href={`tel:${site.phoneHref}`}>Appeler le {site.phone}</a>}
+        <a class="btn btn-secondary" href={`mailto:${site.email}?subject=Cours d’essai Krav Maga à Limeil-Brévannes&body=Bonjour,%0D%0A%0D%0AJe souhaite faire un cours d’essai de Krav Maga.%0D%0A%0D%0ANom :%0D%0APrénom :%0D%0AÂge :%0D%0ANiveau sportif ou arts martiaux :%0D%0ACréneau souhaité :%0D%0A%0D%0ACordialement`}>Envoyer un e-mail</a>
       </div>
     </div>
   </section>
