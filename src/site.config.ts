@@ -56,7 +56,7 @@ export const instructor = {
   // Phrase d'accroche reprise de ses propres mots (usage public validé).
   motto: 'L’école ne t’apprend pas le métier. Rien ne remplace l’expérience du terrain.',
   intro:
-    'Ceinture noire 4ᵉ dan et éducateur sportif diplômé d’État, Laurent forme les forces de l’ordre aux techniques d’intervention. À Limeil-Brévannes, il met cette expérience du terrain au service de tous, avec une exigence simple : que chacun reparte capable de se protéger, et de protéger les siens.',
+    'Ceinture noire 4ème Dan / 4ème degré de Krav Maga, grade homologué par la FFKDA, et éducateur sportif diplômé d’État, Laurent forme aussi les forces de l’ordre aux techniques d’intervention. À Limeil-Brévannes, il met cette expérience du terrain au service de tous, avec une exigence simple : transmettre des réflexes fiables, progressifs et utilisables sous stress.',
   // Crédibilité vérifiable plutôt que des scans de documents personnels.
   credentials: [
     {
@@ -66,8 +66,8 @@ export const instructor = {
       verifiable: true
     },
     {
-      title: 'Ceinture noire 4ᵉ dan de Krav Maga',
-      detail: 'Homologuée par la Fédération Française de Karaté et Disciplines Associées (FFKDA).',
+      title: 'Ceinture noire 4ème Dan / 4ème degré de Krav Maga',
+      detail: 'Grade fédéral avancé homologué par la Fédération Française de Karaté et Disciplines Associées (FFKDA), obtenu après plusieurs années de pratique, d’enseignement et d’évaluation technique.',
       date: 'Homologuée le 11 juin 2022'
     },
     {
