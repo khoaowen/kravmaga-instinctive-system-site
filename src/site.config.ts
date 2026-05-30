@@ -61,24 +61,20 @@ export const instructor = {
   credentials: [
     {
       title: 'Carte professionnelle d’éducateur sportif',
-      detail: 'Mention Krav Maga — délivrée par la Préfecture du Val-de-Marne, valable jusqu’en 2027.',
-      date: 'Valable jusqu’en 2027',
+      detail: 'Mention Krav Maga — délivrée par la Préfecture du Val-de-Marne.',
       verifiable: true
     },
     {
       title: 'Ceinture noire 4ème Dan / 4ème degré de Krav Maga',
-      detail: 'Grade fédéral avancé homologué par la Fédération Française de Karaté et Disciplines Associées (FFKDA), obtenu après plusieurs années de pratique, d’enseignement et d’évaluation technique.',
-      date: 'Homologuée le 11 juin 2022'
+      detail: 'Grade fédéral avancé homologué par la Fédération Française de Karaté et Disciplines Associées (FFKDA), obtenu après plusieurs années de pratique, d’enseignement et d’évaluation technique.'
     },
     {
       title: 'Instructeur fédéral de Krav Maga',
-      detail: 'Fédération Française de Karaté (Ligue Île-de-France) et Fédération Française du Sport Travailliste.',
-      date: 'Depuis 2013 · renouvelé en 2024'
+      detail: 'Fédération Française de Karaté (Ligue Île-de-France) et Fédération Française du Sport Travailliste.'
     },
     {
       title: 'Enseignant professionnel d’arts martiaux (CQP)',
-      detail: 'Certificat de qualification professionnelle, mention Krav Maga.',
-      date: 'Délivré en 2016'
+      detail: 'Certificat de qualification professionnelle, mention Krav Maga.'
     },
     {
       title: 'Moniteur GTPI – police municipale',
@@ -86,13 +82,11 @@ export const instructor = {
     },
     {
       title: 'Instructeur bâton tactique — ASP',
-      detail: 'Certification internationale Armament Systems and Procedures (techniques d’intervention).',
-      date: 'Obtenue le 13 octobre 2012'
+      detail: 'Certification internationale Armament Systems and Procedures (techniques d’intervention).'
     },
     {
       title: 'Sauveteur — PSC1',
-      detail: 'Prévention et Secours Civiques de niveau 1 (Protection Civile).',
-      date: 'Délivré le 28 avril 2022'
+      detail: 'Prévention et Secours Civiques de niveau 1 (Protection Civile).'
     }
   ],
   // Lien officiel pour vérifier la carte professionnelle.
