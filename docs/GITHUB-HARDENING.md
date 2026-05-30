@@ -16,7 +16,6 @@ Protect `main` under Settings > Branches:
   - `Build and typecheck`
   - `Analyze JavaScript and TypeScript`
   - `Gitleaks`
-  - `Supply-chain security checks`
 - Require conversation resolution before merging
 - Block force pushes
 - Block deletions
