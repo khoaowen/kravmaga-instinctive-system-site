@@ -62,19 +62,23 @@ export const instructor = {
     {
       title: 'Carte professionnelle d’éducateur sportif',
       detail: 'Mention Krav Maga — délivrée par la Préfecture du Val-de-Marne, valable jusqu’en 2027.',
+      date: 'Valable jusqu’en 2027',
       verifiable: true
     },
     {
       title: 'Ceinture noire 4ᵉ dan de Krav Maga',
-      detail: 'Homologuée par la Fédération Française de Karaté et Disciplines Associées (FFKDA).'
+      detail: 'Homologuée par la Fédération Française de Karaté et Disciplines Associées (FFKDA).',
+      date: 'Homologuée le 11 juin 2022'
     },
     {
       title: 'Instructeur fédéral de Krav Maga',
-      detail: 'Fédération Française de Karaté (Ligue Île-de-France) et Fédération Française du Sport Travailliste.'
+      detail: 'Fédération Française de Karaté (Ligue Île-de-France) et Fédération Française du Sport Travailliste.',
+      date: 'Depuis 2013 · renouvelé en 2024'
     },
     {
       title: 'Enseignant professionnel d’arts martiaux (CQP)',
-      detail: 'Certificat de qualification professionnelle, mention Krav Maga.'
+      detail: 'Certificat de qualification professionnelle, mention Krav Maga.',
+      date: 'Délivré en 2016'
     },
     {
       title: 'Formateur des forces de l’ordre',
@@ -82,11 +86,13 @@ export const instructor = {
     },
     {
       title: 'Instructeur bâton tactique — ASP',
-      detail: 'Certification internationale Armament Systems and Procedures (techniques d’intervention).'
+      detail: 'Certification internationale Armament Systems and Procedures (techniques d’intervention).',
+      date: 'Obtenue le 13 octobre 2012'
     },
     {
       title: 'Sauveteur — PSC1',
-      detail: 'Prévention et Secours Civiques de niveau 1 (Protection Civile).'
+      detail: 'Prévention et Secours Civiques de niveau 1 (Protection Civile).',
+      date: 'Délivré le 28 avril 2022'
     }
   ],
   // Lien officiel pour vérifier la carte professionnelle.
