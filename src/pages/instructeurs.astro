@@ -95,7 +95,6 @@ import { site, instructor, principles } from '../site.config';
       <ul class="credentials">
         {instructor.credentials.map((c) => (
           <li class="card credential">
-            {c.date && <span class="cred-date">{c.date}</span>}
             <h3>{c.title}</h3>
             <p>{c.detail}</p>
             {c.verifiable && (
@@ -164,13 +163,6 @@ import { site, instructor, principles } from '../site.config';
   .credentials {
     list-style: none; margin: 0; padding: 0;
     display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
-  }
-  .cred-date {
-    display: inline-block; margin-bottom: 10px;
-    padding: 4px 10px; border-radius: 999px;
-    background: rgba(240, 180, 41, 0.12); border: 1px solid rgba(240, 180, 41, 0.35);
-    color: var(--accent-2); font-size: 0.78rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.04em;
   }
   .credential h3 { font-size: 1.15rem; margin-bottom: 8px; }
   .credential p { margin: 0 0 10px; }
