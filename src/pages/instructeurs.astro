@@ -1,27 +1,176 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, instructor, principles } from '../site.config';
 ---
 <BaseLayout
-  title="Instructeurs Krav Maga Instinctive System"
-  description="Présentation des instructeurs de Krav Maga Instinctive System à Limeil-Brévannes, leur approche et leur cadre d’enseignement."
+  title={`${instructor.name} — instructeur Krav Maga à ${site.city}`}
+  description={`${instructor.name}, ${instructor.role.toLowerCase()} de ${site.name} : ceinture noire 4ᵉ dan et éducateur sportif diplômé d’État. Un Krav Maga concret, exigeant et bienveillant à ${site.city}.`}
 >
   <section class="hero">
-    <div class="container">
-      <p class="eyebrow">Encadrement</p>
-      <h1>Instructeurs</h1>
-      <p class="lead">Les informations sur l’encadrement seront communiquées prochainement.</p>
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">L’instructeur</p>
+        <h1>{instructor.name}</h1>
+        <p class="role">{instructor.role} — {site.name}</p>
+        <p class="lead">{instructor.intro}</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="/inscription-essai/">{site.trialLabel}</a>
+          <a class="btn btn-secondary" href="#parcours">Voir le parcours</a>
+        </div>
+      </div>
+      <figure class="portrait">
+        <img
+          src={instructor.photo}
+          alt={`${instructor.name}, instructeur de Krav Maga à ${site.city}`}
+          width="714"
+          height="707"
+          loading="eager"
+        />
+        <figcaption>{instructor.name} · {instructor.hometown}</figcaption>
+      </figure>
     </div>
   </section>
+
   <section class="section">
-    <div class="container grid-2">
-      <article class="card">
-        <h2>Encadrement des cours</h2>
-        <p>Contactez l’association pour les informations d’inscription et les modalités d’accueil.</p>
-      </article>
-      <article class="card">
-        <h2>Approche pédagogique</h2>
-        <p>Les cours sont organisés dans un cadre sérieux, progressif et accessible aux débutants.</p>
-      </article>
+    <div class="container">
+      <blockquote class="pull-quote">
+        <p>« {instructor.motto} »</p>
+        <cite>{instructor.name}</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Sa pédagogie</p>
+        <h2>L’expertise du terrain, la passion de transmettre.</h2>
+        <p>Ce qui fait la différence ici, ce n’est pas seulement un palmarès : c’est un instructeur qui a la rigueur du métier et une vraie attention pour chaque élève. Sous une allure de dur, un pédagogue patient.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <h3>Le terrain avant la théorie</h3>
+          <p>Il forme les forces de l’ordre aux techniques d’intervention : une méthode éprouvée pour de vraies situations, pas pour la démonstration. Des gestes simples, qui fonctionnent sous stress.</p>
+        </article>
+        <article class="card">
+          <h3>Une exigence bienveillante</h3>
+          <p>Personne n’est jugé. Du grand débutant au pratiquant confirmé, chacun progresse à son rythme, en confiance et en sécurité.</p>
+        </article>
+        <article class="card">
+          <h3>La sécurité d’abord</h3>
+          <p>La meilleure défense, c’est d’éviter le danger. On travaille autant la vigilance et la désescalade que la riposte.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Les fondations</p>
+        <h2>Les 7 principes du Krav Maga.</h2>
+        <p>Conçu par Imi Lichtenfeld, le Krav Maga repose sur une poignée de principes simples. Ce sont eux qui guident chaque séance.</p>
+      </div>
+      <ol class="principles">
+        {principles.map((p, i) => (
+          <li class="principle">
+            <span class="principle-num">{i + 1}</span>
+            <div>
+              <h3>{p.title}</h3>
+              <p>{p.text}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section id="parcours" class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Parcours &amp; diplômes</p>
+        <h2>Des qualifications reconnues et vérifiables.</h2>
+        <p>Un encadrement déclaré, à jour de ses certifications, dans un cadre légal et assuré.</p>
+      </div>
+      <ul class="credentials">
+        {instructor.credentials.map((c) => (
+          <li class="card credential">
+            <h3>{c.title}</h3>
+            <p>{c.detail}</p>
+            {c.verifiable && (
+              <a class="verify" href={instructor.registryUrl} target="_blank" rel="noopener">
+                Vérifier sur le registre public du Ministère des Sports →
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cta">
+      <p class="eyebrow">Le meilleur moyen de juger</p>
+      <h2>Venez faire un cours d’essai avec Laurent.</h2>
+      <p>Un cours suffit pour ressentir l’ambiance, la rigueur et la bienveillance de l’enseignement. Débutants bienvenus.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/inscription-essai/">{site.trialLabel}</a>
+        <a class="btn btn-secondary" href="/horaires-tarifs/">Voir les horaires</a>
+      </div>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .role { color: var(--accent-2); font-weight: 700; margin-top: -6px; }
+  .portrait { margin: 0; }
+  .portrait img {
+    width: 100%; border-radius: var(--radius); display: block;
+    border: 1px solid var(--line);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5);
+    filter: grayscale(100%) contrast(1.05);
+  }
+  .portrait figcaption {
+    margin-top: 12px; color: var(--muted); font-size: 0.9rem;
+    text-align: center; letter-spacing: 0.02em;
+  }
+  .pull-quote {
+    margin: 0; padding: 28px 32px; border-left: 4px solid var(--accent);
+    background: rgba(240, 180, 41, 0.08); border-radius: 14px;
+  }
+  .pull-quote p {
+    margin: 0 0 10px; color: var(--text);
+    font-size: clamp(1.3rem, 2.4vw, 1.9rem); font-weight: 700; line-height: 1.3;
+    letter-spacing: -0.02em;
+  }
+  .pull-quote cite { color: var(--accent-2); font-style: normal; font-weight: 700; }
+  .principles {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+  }
+  .principle {
+    display: flex; gap: 16px; align-items: flex-start;
+    background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+    border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px;
+  }
+  .principle-num {
+    flex: none; width: 40px; height: 40px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: var(--accent); color: #121212; font-weight: 800; font-size: 1.05rem;
+  }
+  .principle h3 { font-size: 1.15rem; margin-bottom: 6px; }
+  .principle p { margin: 0; }
+  .credentials {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+  }
+  .credential h3 { font-size: 1.15rem; margin-bottom: 8px; }
+  .credential p { margin: 0 0 10px; }
+  .verify {
+    color: var(--accent-2); font-weight: 700; font-size: 0.9rem; text-decoration: none;
+  }
+  .verify:hover { text-decoration: underline; }
+  @media (max-width: 860px) {
+    .principles, .credentials { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { site, schedule } from '../site.config';
+import { site, schedule, instructor } from '../site.config';
 ---
 <BaseLayout
   title="Krav Maga à Limeil-Brévannes"
@@ -22,7 +22,10 @@ import { site, schedule } from '../site.config';
       <aside class="card hero-card" aria-label="Informations principales">
         <h2>Reprise et inscriptions</h2>
         <p>Les informations de rentrée, horaires et tarifs seront communiquées prochainement. Contactez l’association pour préparer un cours d’essai.</p>
-        <a class="btn btn-primary" href={`mailto:${site.email}`}>Contacter l’association</a>
+        <div class="actions" style="margin-top: 18px;">
+          {site.phone && <a class="btn btn-primary" href={`tel:${site.phoneHref}`}>Appeler le {site.phone}</a>}
+          <a class="btn btn-secondary" href={`mailto:${site.email}`}>Écrire un e-mail</a>
+        </div>
       </aside>
     </div>
   </section>
@@ -47,6 +50,28 @@ import { site, schedule } from '../site.config';
           <h3>Condition physique</h3>
           <p>Les séances permettent aussi de développer endurance, coordination et confiance, sans esprit de compétition obligatoire.</p>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container instructor-band">
+      <figure class="instructor-photo">
+        <img
+          src={instructor.photo}
+          alt={`${instructor.name}, instructeur de Krav Maga à ${site.city}`}
+          width="714"
+          height="707"
+          loading="lazy"
+        />
+      </figure>
+      <div>
+        <p class="eyebrow">Votre instructeur</p>
+        <h2>{instructor.name}, l’expertise du terrain et la passion de transmettre.</h2>
+        <p>Ceinture noire 4ᵉ dan et éducateur sportif diplômé d’État, Laurent forme les forces de l’ordre aux techniques d’intervention. Il enseigne un Krav Maga concret et exigeant, dans un cadre bienveillant où débutants comme confirmés progressent en confiance.</p>
+        <div class="actions">
+          <a class="btn btn-secondary" href="/instructeurs/">Découvrir Laurent et son parcours</a>
+        </div>
       </div>
     </div>
   </section>
@@ -84,3 +109,21 @@ import { site, schedule } from '../site.config';
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .instructor-band {
+    display: grid; grid-template-columns: minmax(200px, 0.7fr) minmax(0, 1.3fr);
+    gap: 32px; align-items: center;
+  }
+  .instructor-photo { margin: 0; }
+  .instructor-photo img {
+    width: 100%; border-radius: var(--radius); display: block;
+    border: 1px solid var(--line);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5);
+    filter: grayscale(100%) contrast(1.05);
+  }
+  @media (max-width: 860px) {
+    .instructor-band { grid-template-columns: 1fr; }
+    .instructor-photo { max-width: 360px; }
+  }
+</style>
