@@ -82,7 +82,7 @@ export const instructor = {
     },
     {
       title: 'Formateur des forces de l’ordre',
-      detail: 'Intervenant auprès des professionnels de la sécurité aux techniques d’intervention.'
+      detail: 'Moniteur en gestes et techniques professionnels d’intervention (GTPI) pour la police municipale.'
     },
     {
       title: 'Instructeur bâton tactique — ASP',
