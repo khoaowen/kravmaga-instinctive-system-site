@@ -4,7 +4,7 @@ Site statique Astro pour l’association Krav Maga Instinctive System à Limeil-
 
 ## Pré-requis
 
-- Node.js 20 ou plus récent
+- Node.js 22.12 ou plus récent
 - Git
 - Un compte GitHub
 - Un compte Cloudflare
