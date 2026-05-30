@@ -7,20 +7,28 @@ Apply these repository settings in GitHub after pushing the `.github/` configura
 Protect `main` under Settings > Branches:
 
 - Require a pull request before merging
-- Require at least 1 approval
-- Require review from Code Owners
-- Dismiss stale approvals when new commits are pushed
+- Require 0 approvals for solo-maintainer operation
+- Do not require Code Owners review unless another maintainer is available
 - Require status checks to pass before merging
 - Require branches to be up to date before merging
 - Required checks:
   - `Build and typecheck`
   - `Analyze JavaScript and TypeScript`
   - `Gitleaks`
-  - `Supply-chain security checks`
+  - `Workers Builds: kravmaga-instinctive-system-site`
 - Require conversation resolution before merging
 - Block force pushes
 - Block deletions
 - Include administrators if you want the same process for repo owners
+
+## Dependabot Auto-Merge Policy
+
+The repository has an auto-merge workflow for Dependabot PRs:
+
+- Patch and minor updates are queued for squash merge after all required checks pass.
+- Security updates are handled by the same rule when they are not major updates.
+- Major updates are never auto-merged; they receive a comment and stay open for manual review.
+- The workflow does not checkout or execute PR code, because it runs with elevated `pull_request_target` permissions.
 
 ## Security and Analysis
 
