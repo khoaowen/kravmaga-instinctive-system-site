@@ -12,6 +12,7 @@ const { title, description } = Astro.props;
 const nav = [
   { href: '/', label: 'Accueil' },
   { href: '/cours-krav-maga-limeil-brevannes/', label: 'Cours' },
+  { href: '/instructeurs/', label: 'Instructeur' },
   { href: '/horaires-tarifs/', label: 'Horaires & tarifs' },
   { href: '/inscription-essai/', label: 'Cours d’essai' },
   { href: '/lieu/', label: 'Lieu' },
@@ -25,7 +26,7 @@ const nav = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <Seo title={title} description={description} />
     <JsonLd />
-    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="icon" href="/favicon-kmis.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <style is:global>
       :root {
@@ -121,11 +122,38 @@ const nav = [
       .pill { padding: 8px 12px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); background: rgba(255,255,255,0.04); }
       .cta { background: linear-gradient(135deg, rgba(240,180,41,0.18), rgba(255,255,255,0.04)); border: 1px solid var(--line); border-radius: calc(var(--radius) + 6px); padding: 34px; }
       .site-footer { border-top: 1px solid var(--line); margin-top: 60px; padding: 34px 0; color: var(--muted); }
-      .footer-grid { display: grid; grid-template-columns: 140px minmax(0, 1.2fr) minmax(190px, 0.8fr) minmax(160px, 0.7fr); gap: 24px; align-items: stretch; }
+      .footer-grid { display: grid; grid-template-columns: 140px minmax(0, 1.2fr) minmax(190px, 0.8fr) minmax(160px, 0.7fr); gap: 24px; align-items: start; }
+      .footer-logo-frame {
+        position: relative; display: block; width: 128px; height: 128px; padding: 0;
+        border: 0; border-radius: 50%; isolation: isolate; background: transparent;
+        cursor: zoom-in;
+      }
       .footer-logo {
-        width: 128px; height: 100%; min-height: 132px; max-height: 180px;
-        border-radius: 50%; object-fit: cover; align-self: stretch;
+        position: absolute; left: 0; bottom: 0; z-index: 1;
+        display: block; width: 128px; height: 128px; max-width: none;
+        border-radius: 50%; object-fit: cover; align-self: start;
         border: 1px solid rgba(255, 255, 255, 0.18); background: #111;
+        box-shadow: 0 14px 36px rgba(0, 0, 0, 0.18);
+        transition: width 180ms ease, height 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+      }
+      .footer-logo-frame.is-expanded {
+        z-index: 8;
+      }
+      .footer-logo-frame.is-expanded .footer-logo {
+        width: min(280px, calc(100vw - 40px)); height: min(280px, calc(100vw - 40px));
+        border-color: rgba(240, 180, 41, 0.75);
+        box-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+      }
+      .footer-logo-frame.is-expanded { cursor: zoom-out; }
+      @media (hover: hover) and (pointer: fine) {
+        .footer-logo-frame:hover {
+          z-index: 8;
+        }
+        .footer-logo-frame:hover .footer-logo {
+          width: min(280px, calc(100vw - 40px)); height: min(280px, calc(100vw - 40px));
+          border-color: rgba(240, 180, 41, 0.75);
+          box-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+        }
       }
       .footer-title {
         display: block; margin-bottom: 10px; color: var(--text);
@@ -139,7 +167,16 @@ const nav = [
       @media (max-width: 860px) {
         .header-inner { align-items: flex-start; flex-direction: column; }
         .hero-grid, .grid-2, .grid-3, .footer-grid { grid-template-columns: 1fr; }
-        .footer-logo { width: 120px; height: 120px; min-height: 0; justify-self: start; }
+        .footer-logo-frame { width: 120px; height: 120px; min-height: 0; justify-self: start; }
+        .footer-logo { width: 120px; height: 120px; }
+        .footer-logo-frame.is-expanded .footer-logo {
+          width: min(240px, calc(100vw - 40px)); height: min(240px, calc(100vw - 40px));
+        }
+        @media (hover: hover) and (pointer: fine) {
+          .footer-logo-frame:hover .footer-logo {
+            width: min(240px, calc(100vw - 40px)); height: min(240px, calc(100vw - 40px));
+          }
+        }
         .hero { padding-top: 50px; }
         .nav { gap: 10px; }
         .nav a { font-size: 0.9rem; }
@@ -164,15 +201,18 @@ const nav = [
     </main>
     <footer class="site-footer">
       <div class="container footer-grid">
-        <img class="footer-logo" src="/logo-kmis.png" alt="" width="128" height="128" />
+        <button class="footer-logo-frame" type="button" aria-label="Agrandir ou réduire le logo KMIS">
+          <img class="footer-logo" src="/logo-kmis.png" alt="" width="128" height="128" />
+        </button>
         <div>
           <strong class="footer-title">{site.brandName}</strong>
           <p>Association de Krav Maga et self-défense à {site.city}. Cours pour débutants et pratiquants souhaitant progresser dans un cadre sérieux.</p>
         </div>
         <div>
           <strong class="footer-title">Contact</strong>
+          {site.phone && <a href={`tel:${site.phoneHref}`}>{site.phone}</a>}
+          {site.whatsapp && <a href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noopener">WhatsApp</a>}
           <a href={`mailto:${site.email}`}>{site.email}</a>
-          {site.phone && <><span>{site.phone}</span><br /></>}
           <span>{site.address}</span>
         </div>
         <div>
@@ -183,5 +223,11 @@ const nav = [
         </div>
       </div>
     </footer>
+    <script>
+      const footerLogoFrame = document.querySelector('.footer-logo-frame');
+      footerLogoFrame?.addEventListener('click', () => {
+        footerLogoFrame.classList.toggle('is-expanded');
+      });
+    </script>
   </body>
 </html>
