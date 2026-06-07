@@ -1,9 +1,30 @@
 ---
 import { site, schedule, instructor } from '../site.config';
 
-const openingHours = schedule
+const dayMap: Record<string, string> = {
+  Lundi: 'Monday',
+  Mardi: 'Tuesday',
+  Mercredi: 'Wednesday',
+  Jeudi: 'Thursday',
+  Vendredi: 'Friday',
+  Samedi: 'Saturday',
+  Dimanche: 'Sunday'
+};
+
+const openingHoursSpecification = schedule
   .filter((item) => !item.time.includes('communiqués prochainement'))
-  .map((item) => `${item.day} ${item.time}`);
+  .map((item) => {
+    const [opens, closes] = item.time.split('-');
+
+    return {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: dayMap[item.day] ?? item.day,
+      opens,
+      closes
+    };
+  });
+
+const sameAs = [site.facebook, site.instagram, site.helloAsso, site.googleMapsUrl].filter(Boolean);
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -13,8 +34,20 @@ const jsonLd = {
   sport: 'Krav Maga',
   description: `Association de Krav Maga et self-défense à ${site.city}. Cours pour adultes, débutants et pratiquants souhaitant apprendre à se protéger.` ,
   url: site.domain,
+  logo: new URL('/logo-kmis.png', site.domain).href,
+  image: [
+    new URL('/logo-kmis.png', site.domain).href,
+    new URL(instructor.photo, site.domain).href,
+    new URL('/images/principes-krav-maga.jpg', site.domain).href
+  ],
   email: site.email,
   telephone: site.phoneHref || site.phone || undefined,
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: site.phoneHref || site.phone || undefined,
+    contactType: 'customer support',
+    availableLanguage: ['fr']
+  },
   founder: {
     '@type': 'Person',
     name: instructor.name,
@@ -36,8 +69,8 @@ const jsonLd = {
     addressCountry: site.country
   },
   areaServed: [site.city, ...site.nearbyCities],
-  openingHours: openingHours.length ? openingHours : undefined,
-  sameAs: [site.facebook, site.instagram].filter(Boolean)
+  openingHoursSpecification: openingHoursSpecification.length ? openingHoursSpecification : undefined,
+  sameAs: sameAs.length ? sameAs : undefined
 };
 ---
 <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

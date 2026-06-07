@@ -21,6 +21,10 @@ Protect `main` under Settings > Branches:
 - Block deletions
 - Include administrators if you want the same process for repo owners
 
+## Cloudflare Deploy Secrets
+
+Repository-owned deploy workflows require a GitHub token or GitHub App with `workflows` permission before `.github/workflows/` files can be pushed. Configure Cloudflare deployment from the GitHub UI or update the automation credential deliberately before adding an active deploy workflow.
+
 ## Dependabot Auto-Merge Policy
 
 The repository has an auto-merge workflow for Dependabot PRs:

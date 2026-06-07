@@ -35,6 +35,8 @@ src/site.config.ts
 - Tarifs
 - Liens Facebook / Instagram / HelloAsso
 - Lien Google Maps
+- Texte et checklists du cours d’essai
+- Métadonnées des photos publiées
 
 ## Modifier le domaine
 
@@ -72,6 +74,16 @@ Le site généré sera dans le dossier :
 dist/
 ```
 
+## Runbook de maintenance
+
+Les mises à jour récurrentes sont documentées dans :
+
+```text
+docs/UPDATE-RUNBOOK.md
+```
+
+Le runbook couvre rentrée, stage, horaires, tarifs, photos, contact et vérifications avant PR.
+
 ## Déployer sur Cloudflare Pages
 
 1. Pousser ce projet sur GitHub.
@@ -102,4 +114,4 @@ dist
 
 ## Notes
 
-Ce site évite volontairement les formulaires pour réduire les problèmes RGPD au début. Le contact se fait par email. Un lien HelloAsso peut être ajouté plus tard.
+Ce site évite volontairement les formulaires pour réduire les problèmes RGPD au début. Le contact se fait par WhatsApp, téléphone ou email. Un lien HelloAsso peut être ajouté plus tard.
