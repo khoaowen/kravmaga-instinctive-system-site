@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { site, schedule, instructor, photos, trialLesson } from '../site.config';
+import { site, schedule, trialLesson } from '../site.config';
 ---
 <BaseLayout
   title="Krav Maga à Limeil-Brévannes"
@@ -55,49 +55,6 @@ import { site, schedule, instructor, photos, trialLesson } from '../site.config'
   </section>
 
   <section class="section">
-    <div class="container instructor-band">
-      <figure class="instructor-photo">
-        <img
-          src={instructor.photo}
-          alt={`${instructor.name}, instructeur de Krav Maga à ${site.city}`}
-          width="714"
-          height="707"
-          loading="lazy"
-        />
-      </figure>
-      <div>
-        <p class="eyebrow">Votre instructeur</p>
-        <h2>{instructor.name}, l’expertise du terrain et la passion de transmettre.</h2>
-        <p>Ceinture noire 4ème Dan de Krav Maga obtenu avec la FFK et 4ème degré de Krav Maga obtenu avec la FFST, Laurent est éducateur sportif diplômé d’État et forme les forces de l’ordre aux techniques d’intervention. Il enseigne un Krav Maga concret, progressif et exigeant, dans un cadre bienveillant où débutants comme confirmés progressent en confiance.</p>
-        <div class="actions">
-          <a class="btn btn-secondary" href="/instructeurs/">Découvrir Laurent et son parcours</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <p class="eyebrow">Photos</p>
-        <h2>Des repères concrets avant de venir essayer.</h2>
-        <p>Le site privilégie les photos réelles et validées : instructeur, salle, ambiance de cours et événements. Les visuels disponibles aujourd’hui restent regroupés ici pour faciliter les futures mises à jour.</p>
-      </div>
-      <div class="photo-grid">
-        {photos.map((photo) => (
-          <figure class="card photo-card">
-            <img src={photo.src} alt={photo.alt} width="714" height="707" loading="lazy" />
-            <figcaption>
-              <strong>{photo.title}</strong>
-              <span>{photo.text}</span>
-            </figcaption>
-          </figure>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
     <div class="container grid-2">
       <div class="card">
         <h2>Cours à Limeil-Brévannes</h2>
@@ -130,37 +87,3 @@ import { site, schedule, instructor, photos, trialLesson } from '../site.config'
     </div>
   </section>
 </BaseLayout>
-
-<style>
-  .instructor-band {
-    display: grid; grid-template-columns: minmax(200px, 0.7fr) minmax(0, 1.3fr);
-    gap: 32px; align-items: center;
-  }
-  .instructor-photo { margin: 0; }
-  .instructor-photo img {
-    width: 100%; border-radius: var(--radius); display: block;
-    border: 1px solid var(--line);
-    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5);
-    filter: grayscale(100%) contrast(1.05);
-  }
-  .photo-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-  }
-  .photo-card { margin: 0; overflow: hidden; padding: 0; }
-  .photo-card img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    border-bottom: 1px solid var(--line);
-  }
-  .photo-card figcaption { display: grid; gap: 8px; padding: 18px; }
-  .photo-card strong { color: var(--text); font-size: 1.1rem; }
-  .photo-card span { color: var(--muted); }
-  @media (max-width: 860px) {
-    .instructor-band, .photo-grid { grid-template-columns: 1fr; }
-    .instructor-photo { max-width: 360px; }
-  }
-</style>
