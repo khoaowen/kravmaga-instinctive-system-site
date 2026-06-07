@@ -48,6 +48,31 @@ export const prices = [
   { label: 'Licence / assurance', amount: 'Tarifs communiqués prochainement' }
 ];
 
+export const trialLesson = {
+  whatsappText: `Bonjour, je souhaite faire un cours d’essai de Krav Maga à Limeil-Brévannes.`,
+  emailSubject: `Cours d’essai Krav Maga à Limeil-Brévannes`,
+  beginnerReassurance:
+    'Le cours d’essai est ouvert aux débutants. L’objectif est de découvrir le cadre, l’ambiance et les bases, sans pression de performance.',
+  messageChecklist: [
+    'Nom et prénom',
+    'Âge',
+    'Niveau sportif ou expérience en arts martiaux',
+    'Créneau souhaité : lundi ou jeudi soir',
+    'Question particulière ou contrainte à signaler'
+  ],
+  bringChecklist: [
+    'Tenue de sport confortable',
+    'Bouteille d’eau',
+    'Chaussures propres si la salle le demande',
+    'Protège-dents ou coquille si vous en avez déjà, sinon ce n’est pas bloquant pour essayer'
+  ],
+  firstClassNotes: [
+    'Arrivez quelques minutes avant le début du cours.',
+    'Prévenez l’instructeur si vous avez une blessure ou une contrainte médicale.',
+    'Les exercices sont expliqués progressivement et adaptés au niveau du groupe.'
+  ]
+};
+
 export const instructor = {
   name: 'Laurent Mays',
   role: 'Fondateur et instructeur',
@@ -92,6 +117,27 @@ export const instructor = {
   // Lien officiel pour vérifier la carte professionnelle.
   registryUrl: 'https://eapspublic.sports.gouv.fr'
 };
+
+export const photos = [
+  {
+    src: instructor.photo,
+    alt: `Laurent Mays, instructeur de Krav Maga à Limeil-Brévannes`,
+    title: 'Instructeur',
+    text: 'Une présentation claire de l’encadrement aide les nouveaux pratiquants à se projeter avant le premier contact.'
+  },
+  {
+    src: '/images/principes-krav-maga.jpg',
+    alt: `Entraînement de Krav Maga et self-défense à Limeil-Brévannes`,
+    title: 'Ambiance de cours',
+    text: 'Les photos réelles de salle, groupe ou stage sont à privilégier dès qu’elles sont disponibles et validées pour publication.'
+  },
+  {
+    src: '/logo-kmis.png',
+    alt: `Krav Maga Instinctive System, association de Krav Maga à Limeil-Brévannes`,
+    title: 'Association',
+    text: 'Le logo reste un repère utile, mais il doit compléter les photos terrain plutôt que les remplacer.'
+  }
+];
 
 // Les 7 principes du Krav Maga d’Imi Lichtenfeld, rédigés en clair.
 export const principles = [

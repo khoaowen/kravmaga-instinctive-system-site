@@ -1,6 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { site } from '../site.config';
+import { site, trialLesson } from '../site.config';
+
+const trialEmailBody = [
+  'Bonjour,',
+  '',
+  trialLesson.whatsappText,
+  '',
+  ...trialLesson.messageChecklist.map((item) => item + ' :'),
+  '',
+  'Cordialement'
+].join('\r\n');
 ---
 <BaseLayout
   title="Cours d’essai Krav Maga à Limeil-Brévannes"
@@ -10,13 +20,13 @@ import { site } from '../site.config';
     <div class="container">
       <p class="eyebrow">Commencer</p>
       <h1>Demander un cours d’essai</h1>
-      <p class="lead">Un cours d’essai permet de découvrir l’ambiance, les exercices et le niveau du groupe avant de s’inscrire.</p>
+      <p class="lead">{trialLesson.beginnerReassurance}</p>
       <div class="actions">
         {site.whatsapp && (
-          <a class="btn btn-primary" href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Bonjour, je souhaite faire un cours d’essai de Krav Maga à ' + site.city + '.')}`} target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+          <a class="btn btn-primary" href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(trialLesson.whatsappText)}`} target="_blank" rel="noopener">Écrire sur WhatsApp</a>
         )}
         {site.phone && <a class="btn btn-secondary" href={`tel:${site.phoneHref}`}>Appeler le {site.phone}</a>}
-        <a class="btn btn-secondary" href={`mailto:${site.email}?subject=Cours d’essai Krav Maga à Limeil-Brévannes&body=Bonjour,%0D%0A%0D%0AJe souhaite faire un cours d’essai de Krav Maga.%0D%0A%0D%0ANom :%0D%0APrénom :%0D%0AÂge :%0D%0ANiveau sportif ou arts martiaux :%0D%0ACréneau souhaité :%0D%0A%0D%0ACordialement`}>Envoyer un e-mail</a>
+        <a class="btn btn-secondary" href={`mailto:${site.email}?subject=${encodeURIComponent(trialLesson.emailSubject)}&body=${encodeURIComponent(trialEmailBody)}`}>Envoyer un e-mail</a>
       </div>
     </div>
   </section>
@@ -25,25 +35,20 @@ import { site } from '../site.config';
       <article class="card">
         <h2>À envoyer</h2>
         <ul class="list">
-          <li>Nom et prénom.</li>
-          <li>Âge.</li>
-          <li>Niveau sportif ou expérience en arts martiaux.</li>
-          <li>Créneau souhaité.</li>
-          <li>Question particulière si besoin.</li>
+          {trialLesson.messageChecklist.map((item) => <li>{item}.</li>)}
         </ul>
       </article>
       <article class="card">
         <h2>À prévoir</h2>
         <ul class="list">
-          <li>Tenue de sport confortable.</li>
-          <li>Bouteille d’eau.</li>
-          <li>Chaussures propres si la salle l’exige.</li>
-          <li>Protège-dents ou coquille si déjà disponibles, sinon à voir après.</li>
+          {trialLesson.bringChecklist.map((item) => <li>{item}.</li>)}
         </ul>
       </article>
       <article class="card">
-        <h2>Après l’essai</h2>
-        <p>Si le cours vous convient, l’association vous indiquera les documents d’inscription, la cotisation, l’assurance et les éventuels certificats ou attestations à fournir.</p>
+        <h2>Premier cours</h2>
+        <ul class="list">
+          {trialLesson.firstClassNotes.map((item) => <li>{item}</li>)}
+        </ul>
       </article>
     </div>
   </section>
