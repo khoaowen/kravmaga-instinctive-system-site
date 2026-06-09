@@ -14,7 +14,7 @@ import { schedule, prices } from '../site.config';
     </div>
   </section>
   <section class="section">
-    <div class="container grid-2">
+    <div class="container practical-grid">
       <div class="card">
         <h2>Horaires des cours</h2>
         <table class="table">
@@ -63,11 +63,18 @@ import { schedule, prices } from '../site.config';
 </BaseLayout>
 
 <style>
+  .practical-grid {
+    display: grid;
+    gap: 18px;
+  }
+
   .pricing-card { overflow-x: auto; }
-  .pricing-table { min-width: 760px; }
+  .pricing-table {
+    table-layout: auto;
+  }
   .pricing-table td:first-child { color: var(--text); font-weight: 800; }
   .pricing-table strong { color: var(--text); font-size: 1.08rem; }
-  @media (max-width: 860px) {
+  @media (max-width: 720px) {
     .pricing-table { min-width: 700px; }
   }
 </style>
