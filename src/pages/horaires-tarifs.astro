@@ -24,12 +24,30 @@ import { schedule, prices } from '../site.config';
           </tbody>
         </table>
       </div>
-      <div class="card">
-        <h2>Tarifs</h2>
-        <table class="table">
-          <thead><tr><th>Type</th><th>Montant</th></tr></thead>
+      <div class="card pricing-card">
+        <h2>Tarifs saison 2025/2026</h2>
+        <table class="table pricing-table">
+          <thead>
+            <tr>
+              <th>Catégorie</th>
+              <th>Cotisation</th>
+              <th>Licence</th>
+              <th>Réduction</th>
+              <th>Total</th>
+              <th>Commentaire</th>
+            </tr>
+          </thead>
           <tbody>
-            {prices.map((item) => <tr><td>{item.label}</td><td>{item.amount}</td></tr>)}
+            {prices.map((item) => (
+              <tr>
+                <td>{item.category}</td>
+                <td>{item.membership}</td>
+                <td>{item.license}</td>
+                <td>{item.discount}</td>
+                <td><strong>{item.total}</strong></td>
+                <td>{item.comment ?? '—'}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
@@ -38,8 +56,18 @@ import { schedule, prices } from '../site.config';
   <section class="section">
     <div class="container">
       <div class="notice">
-        <strong>Inscription :</strong> contactez l’association pour les informations d’inscription, les créneaux disponibles et les conditions d’essai.
+        <strong>Inscription :</strong> les réductions s’appliquent sur la cotisation. La licence reste à 24 €. Contactez l’association pour les créneaux disponibles, les justificatifs éventuels et les conditions d’essai.
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .pricing-card { overflow-x: auto; }
+  .pricing-table { min-width: 760px; }
+  .pricing-table td:first-child { color: var(--text); font-weight: 800; }
+  .pricing-table strong { color: var(--text); font-size: 1.08rem; }
+  @media (max-width: 860px) {
+    .pricing-table { min-width: 700px; }
+  }
+</style>

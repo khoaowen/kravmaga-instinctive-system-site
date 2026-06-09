@@ -42,10 +42,28 @@ export const schedule = [
 ];
 
 export const prices = [
-  { label: 'Cours d’essai', amount: 'Tarifs communiqués prochainement' },
-  { label: 'Cotisation annuelle adulte', amount: 'Tarifs communiqués prochainement' },
-  { label: 'Cotisation annuelle ado', amount: 'Tarifs communiqués prochainement' },
-  { label: 'Licence / assurance', amount: 'Tarifs communiqués prochainement' }
+  {
+    category: 'Adulte',
+    membership: '230 €',
+    license: '24 €',
+    discount: '0 %',
+    total: '254 €'
+  },
+  {
+    category: 'Famille adulte',
+    membership: '230 €',
+    license: '24 €',
+    discount: '50 % sur la cotisation',
+    total: '139 €',
+    comment: 'Pour le 2ème adulte'
+  },
+  {
+    category: 'Étudiant / demandeur d’emploi',
+    membership: '230 €',
+    license: '24 €',
+    discount: '15 % sur la cotisation',
+    total: '219 €'
+  }
 ];
 
 export const trialLesson = {
