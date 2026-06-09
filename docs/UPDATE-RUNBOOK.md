@@ -55,4 +55,3 @@ Also review changed files for secrets, private member data, unpublished pricing 
 - PR checks must pass before merge.
 - `main` deploys through the GitHub Actions Wrangler workflow when Cloudflare secrets are configured.
 - Required secrets: `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`.
-- If secrets are absent, the deploy workflow builds and skips deployment with an explicit notice.
