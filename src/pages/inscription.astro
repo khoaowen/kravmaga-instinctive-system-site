@@ -44,29 +44,11 @@ const emailBody = [
     </div>
   </section>
 
-  <section class="section">
-    <div class="container grid-3">
-      <article class="card">
-        <h2>Simple pour l’adhérent</h2>
-        <p>Le formulaire se remplit depuis un téléphone ou un ordinateur. Les informations sont envoyées directement à l’association, sans document papier à remettre en main propre.</p>
-      </article>
-      <article class="card">
-        <h2>Pratique pour l’association</h2>
-        <p>Les réponses sont centralisées dans un tableau privé, avec une notification envoyée à {site.email}. La boîte OVH reste réservée aux alertes et échanges, pas au stockage des dossiers.</p>
-      </article>
-      <article class="card">
-        <h2>Données protégées</h2>
-        <p>Les accès doivent être limités aux responsables autorisés. Les informations d’adhésion, de mineurs et de contacts d’urgence ne doivent pas être partagées publiquement.</p>
-      </article>
-    </div>
-  </section>
-
   <section class="section" id="formulaire">
     <div class="container">
       <div class="section-header">
         <p class="eyebrow">Formulaire</p>
         <h2>Inscription KMIS</h2>
-        <p>Solution cible : {site.registrationStorage}. Le formulaire public est intégré ci-dessous.</p>
       </div>
 
       {formUrl ? (
@@ -91,24 +73,6 @@ const emailBody = [
           </div>
         </div>
       )}
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container grid-2">
-      <div>
-        <p class="eyebrow">À prévoir</p>
-        <h2>Les informations à préparer avant de remplir le formulaire.</h2>
-        <p>La liste exacte pourra évoluer selon la saison, les tarifs et les obligations de licence ou d’assurance.</p>
-      </div>
-      <ul class="list registration-list">
-        <li>Identité et coordonnées de l’adhérent.</li>
-        <li>Coordonnées du représentant légal pour un mineur.</li>
-        <li>Contact d’urgence.</li>
-        <li>Créneau ou formule souhaitée.</li>
-        <li>Autorisation parentale si nécessaire.</li>
-        <li>Justificatifs demandés par l’association ou la fédération.</li>
-      </ul>
     </div>
   </section>
 </BaseLayout>
@@ -137,9 +101,6 @@ const emailBody = [
   }
   .registration-notice p {
     margin-top: 10px;
-  }
-  .registration-list {
-    align-self: start;
   }
   @media (max-width: 860px) {
     .registration-hero { grid-template-columns: 1fr; }
