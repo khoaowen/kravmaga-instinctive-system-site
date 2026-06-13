@@ -24,8 +24,7 @@ const emailBody = [
   description="Préparez votre inscription à Krav Maga Instinctive System à Limeil-Brévannes avec un formulaire en ligne, sans impression papier."
 >
   <section class="hero">
-    <div class="container registration-hero">
-      <div>
+    <div class="container">
         <p class="eyebrow">Adhésion KMIS</p>
         <h1>Préparer son inscription en ligne.</h1>
         <p class="lead">Le formulaire d’adhésion KMIS permet de transmettre les informations nécessaires à l’association sans imprimer, scanner ou envoyer un PDF lourd par email.</p>
@@ -37,10 +36,6 @@ const emailBody = [
           )}
           <a class="btn btn-secondary" href="/inscription-essai/">Demander un cours d’essai</a>
         </div>
-      </div>
-      <figure class="registration-logo" aria-label="Logo KMIS">
-        <img src="/logo-kmis.png" alt="Logo KMIS - Krav Maga Instinctive System" width="320" height="320" />
-      </figure>
     </div>
   </section>
 
@@ -78,19 +73,6 @@ const emailBody = [
 </BaseLayout>
 
 <style>
-  .registration-hero {
-    display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.55fr);
-    gap: 32px; align-items: center;
-  }
-  .registration-logo {
-    margin: 0; justify-self: center;
-  }
-  .registration-logo img {
-    width: min(320px, 70vw); aspect-ratio: 1; object-fit: contain;
-    border-radius: 50%; border: 1px solid var(--line);
-    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
-    background: #111;
-  }
   .form-frame {
     border: 1px solid var(--line); border-radius: var(--radius);
     overflow: hidden; background: #fff;
@@ -101,9 +83,5 @@ const emailBody = [
   }
   .registration-notice p {
     margin-top: 10px;
-  }
-  @media (max-width: 860px) {
-    .registration-hero { grid-template-columns: 1fr; }
-    .registration-logo { justify-self: start; }
   }
 </style>
