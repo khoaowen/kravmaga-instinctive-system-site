@@ -18,7 +18,7 @@ export const site = {
   facebook: '',
   instagram: '',
   helloAsso: '',
-  registrationFormUrl: '',
+  registrationFormUrl: 'https://tally.so/embed/RGrBep?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1',
   registrationStorage: 'Tally + Google Sheets / Google Drive',
   googleMapsUrl: 'https://maps.app.goo.gl/L1E88EpVu8cm3wdx7',
   googleMapsEmbedUrl: 'https://www.google.com/maps?q=Krav%20Maga%20instinctive%20system%2C%20Limeil-Br%C3%A9vannes&ll=48.7431246,2.4818055&z=16&output=embed',
