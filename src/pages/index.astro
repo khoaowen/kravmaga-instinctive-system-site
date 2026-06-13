@@ -21,10 +21,10 @@ import { site, schedule, instructor } from '../site.config';
       </div>
       <aside class="card hero-card" aria-label="Informations principales">
         <h2>Reprise et inscriptions</h2>
-        <p>Les informations de rentrée, horaires et tarifs seront communiquées prochainement. Contactez l’association pour préparer un cours d’essai.</p>
+        <p>Les informations de rentrée, horaires et tarifs seront communiquées prochainement. Le formulaire d’inscription en ligne permettra de transmettre les informations à l’association sans impression papier.</p>
         <div class="actions" style="margin-top: 18px;">
           {site.phone && <a class="btn btn-primary" href={`tel:${site.phoneHref}`}>Appeler le {site.phone}</a>}
-          <a class="btn btn-secondary" href={`mailto:${site.email}`}>Écrire un e-mail</a>
+          <a class="btn btn-secondary" href="/inscription/">Préparer l’inscription</a>
         </div>
       </aside>
     </div>
@@ -104,6 +104,7 @@ import { site, schedule, instructor } from '../site.config';
       <p>Envoyez un message avec votre nom, votre âge, votre niveau et le créneau souhaité. Nous vous répondrons avec les informations pratiques.</p>
       <div class="actions">
         <a class="btn btn-primary" href="/inscription-essai/">Demander un cours d’essai</a>
+        <a class="btn btn-secondary" href="/inscription/">Préparer l’inscription</a>
         <a class="btn btn-secondary" href="/faq/">Lire les questions fréquentes</a>
       </div>
     </div>

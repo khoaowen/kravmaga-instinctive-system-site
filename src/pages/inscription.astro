@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../site.config';
+
+const formUrl = site.registrationFormUrl;
+const emailSubject = 'Inscription KMIS - Krav Maga Limeil-Brévannes';
+const emailBody = [
+  'Bonjour,',
+  '',
+  'Je souhaite recevoir les informations pour finaliser une inscription KMIS.',
+  '',
+  'Nom :',
+  'Prénom :',
+  'Téléphone :',
+  'Email :',
+  'Adulte ou mineur :',
+  'Créneau souhaité :',
+  '',
+  'Cordialement'
+].join('\r\n');
+---
+<BaseLayout
+  title="Inscription Krav Maga à Limeil-Brévannes"
+  description="Préparez votre inscription à Krav Maga Instinctive System à Limeil-Brévannes avec un formulaire en ligne, sans impression papier."
+>
+  <section class="hero">
+    <div class="container registration-hero">
+      <div>
+        <p class="eyebrow">Adhésion KMIS</p>
+        <h1>Préparer son inscription en ligne.</h1>
+        <p class="lead">Le futur formulaire d’adhésion KMIS permettra de transmettre les informations nécessaires à l’association sans imprimer, scanner ou envoyer un PDF lourd par email.</p>
+        <div class="actions">
+          {formUrl ? (
+            <a class="btn btn-primary" href="#formulaire">Remplir le formulaire</a>
+          ) : (
+            <a class="btn btn-primary" href={`mailto:${site.email}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`}>Contacter l’association</a>
+          )}
+          <a class="btn btn-secondary" href="/inscription-essai/">Demander un cours d’essai</a>
+        </div>
+      </div>
+      <figure class="registration-logo" aria-label="Logo KMIS">
+        <img src="/logo-kmis.png" alt="Logo KMIS - Krav Maga Instinctive System" width="320" height="320" />
+      </figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-3">
+      <article class="card">
+        <h2>Simple pour l’adhérent</h2>
+        <p>Le formulaire se remplit depuis un téléphone ou un ordinateur. Les informations sont envoyées directement à l’association, sans document papier à remettre en main propre.</p>
+      </article>
+      <article class="card">
+        <h2>Pratique pour l’association</h2>
+        <p>Les réponses sont centralisées dans un tableau privé, avec une notification envoyée à {site.email}. La boîte OVH reste réservée aux alertes et échanges, pas au stockage des dossiers.</p>
+      </article>
+      <article class="card">
+        <h2>Données protégées</h2>
+        <p>Les accès doivent être limités aux responsables autorisés. Les informations d’adhésion, de mineurs et de contacts d’urgence ne doivent pas être partagées publiquement.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="formulaire">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Formulaire</p>
+        <h2>Inscription KMIS</h2>
+        <p>Solution cible : {site.registrationStorage}. Le formulaire public sera intégré ici dès que l’espace Tally de l’association sera créé.</p>
+      </div>
+
+      {formUrl ? (
+        <div class="form-frame">
+          <iframe
+            src={formUrl}
+            title="Formulaire d’inscription KMIS"
+            width="100%"
+            height="900"
+            loading="lazy"
+          ></iframe>
+        </div>
+      ) : (
+        <div class="notice registration-notice">
+          <strong>Formulaire en préparation.</strong>
+          <p>En attendant l’activation du formulaire en ligne, contactez l’association pour recevoir les consignes d’inscription et les documents à fournir.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href={`mailto:${site.email}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`}>Écrire à {site.email}</a>
+            {site.whatsapp && (
+              <a class="btn btn-secondary" href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Bonjour, je souhaite préparer une inscription KMIS à ' + site.city + '.')}`} target="_blank" rel="noopener">WhatsApp</a>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-2">
+      <div>
+        <p class="eyebrow">À prévoir</p>
+        <h2>Les informations à préparer avant de remplir le formulaire.</h2>
+        <p>La liste exacte pourra évoluer selon la saison, les tarifs et les obligations de licence ou d’assurance.</p>
+      </div>
+      <ul class="list registration-list">
+        <li>Identité et coordonnées de l’adhérent.</li>
+        <li>Coordonnées du représentant légal pour un mineur.</li>
+        <li>Contact d’urgence.</li>
+        <li>Créneau ou formule souhaitée.</li>
+        <li>Autorisation parentale si nécessaire.</li>
+        <li>Justificatifs demandés par l’association ou la fédération.</li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .registration-hero {
+    display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.55fr);
+    gap: 32px; align-items: center;
+  }
+  .registration-logo {
+    margin: 0; justify-self: center;
+  }
+  .registration-logo img {
+    width: min(320px, 70vw); aspect-ratio: 1; object-fit: contain;
+    border-radius: 50%; border: 1px solid var(--line);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+    background: #111;
+  }
+  .form-frame {
+    border: 1px solid var(--line); border-radius: var(--radius);
+    overflow: hidden; background: #fff;
+    min-height: 900px;
+  }
+  .form-frame iframe {
+    display: block; border: 0; background: #fff;
+  }
+  .registration-notice p {
+    margin-top: 10px;
+  }
+  .registration-list {
+    align-self: start;
+  }
+  @media (max-width: 860px) {
+    .registration-hero { grid-template-columns: 1fr; }
+    .registration-logo { justify-self: start; }
+  }
+</style>

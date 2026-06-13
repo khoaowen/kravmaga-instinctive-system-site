@@ -102,4 +102,4 @@ dist
 
 ## Notes
 
-Ce site évite volontairement les formulaires pour réduire les problèmes RGPD au début. Le contact se fait par email. Un lien HelloAsso peut être ajouté plus tard.
+Le parcours d’inscription en ligne est préparé dans `/inscription/`. La solution cible est documentée dans `docs/INSCRIPTION.md` : Tally pour le formulaire, Google Sheets / Drive pour le stockage, et `contact@kmis-kravmaga.fr` seulement pour les notifications.
