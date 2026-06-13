@@ -18,6 +18,8 @@ export const site = {
   facebook: '',
   instagram: '',
   helloAsso: '',
+  registrationFormUrl: '',
+  registrationStorage: 'Tally + Google Sheets / Google Drive',
   googleMapsUrl: 'https://maps.app.goo.gl/L1E88EpVu8cm3wdx7',
   googleMapsEmbedUrl: 'https://www.google.com/maps?q=Krav%20Maga%20instinctive%20system%2C%20Limeil-Br%C3%A9vannes&ll=48.7431246,2.4818055&z=16&output=embed',
   latitude: 48.7431246,
