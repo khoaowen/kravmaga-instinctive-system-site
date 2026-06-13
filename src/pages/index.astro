@@ -21,10 +21,10 @@ import { site, schedule, instructor, trialLesson } from '../site.config';
       </div>
       <aside class="card hero-card" aria-label="Informations principales">
         <h2>Reprise et inscriptions</h2>
-        <p>Contactez l’association sur WhatsApp ou par e-mail pour réserver un cours d’essai. Débutants bienvenus : le premier cours sert à découvrir le cadre, les bases et l’ambiance.</p>
+        <p>Contactez l’association sur WhatsApp ou par e-mail pour réserver un cours d’essai. Débutants bienvenus : le premier cours sert à découvrir le cadre, les bases et l’ambiance. Le formulaire d’inscription en ligne permet ensuite de transmettre les informations d’adhésion sans papier.</p>
         <div class="actions" style="margin-top: 18px;">
           {site.phone && <a class="btn btn-primary" href={`tel:${site.phoneHref}`}>Appeler le {site.phone}</a>}
-          <a class="btn btn-secondary" href={`mailto:${site.email}`}>Écrire un e-mail</a>
+          <a class="btn btn-secondary" href="/inscription/">Préparer l’inscription</a>
         </div>
       </aside>
     </div>
@@ -104,6 +104,7 @@ import { site, schedule, instructor, trialLesson } from '../site.config';
       <p>{trialLesson.beginnerReassurance}</p>
       <div class="actions">
         <a class="btn btn-primary" href="/inscription-essai/">Demander un cours d’essai</a>
+        <a class="btn btn-secondary" href="/inscription/">Préparer l’inscription</a>
         <a class="btn btn-secondary" href="/faq/">Lire les questions fréquentes</a>
       </div>
     </div>

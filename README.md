@@ -235,6 +235,11 @@ docs/UPDATE-RUNBOOK.md
 Le runbook couvre rentrée, stage, horaires, tarifs, photos, contact et
 vérifications avant PR.
 
+Le parcours d’inscription en ligne est préparé dans `/inscription/`. La solution
+cible est documentée dans `docs/INSCRIPTION.md` : Tally pour le formulaire,
+Google Sheets / Drive pour le stockage, et `contact@kmis-kravmaga.fr` seulement
+pour les notifications.
+
 ## Sécurité et données
 
 - Ne pas stocker de listes d’adhérents, données de santé, exports de paiement ou
