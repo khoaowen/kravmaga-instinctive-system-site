@@ -27,5 +27,9 @@ updates:
       time: "06:15"
       timezone: Europe/Paris
     open-pull-requests-limit: 5
+    groups:
+      github-actions:
+        patterns:
+          - "*"
     commit-message:
       prefix: ci
