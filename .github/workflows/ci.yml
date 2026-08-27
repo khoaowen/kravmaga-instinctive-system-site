@@ -34,3 +34,39 @@ jobs:
 
       - name: Build
         run: npm run build
+
+  visual-regression:
+    name: Visual regression
+    runs-on: ubuntu-latest
+    container: mcr.microsoft.com/playwright:v1.54.0-noble
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static site
+        run: npm run build
+
+      - name: Run visual regression tests
+        run: npm run test:visual
+
+      - name: Upload visual-test report and diffs
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-regression-report
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+          retention-days: 7
