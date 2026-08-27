@@ -15,11 +15,14 @@ Protect `main` under Settings > Branches:
   - `Build and typecheck`
   - `Analyze JavaScript and TypeScript`
   - `Gitleaks`
-  - `Workers Builds: kravmaga-instinctive-system-site`
 - Require conversation resolution before merging
 - Block force pushes
 - Block deletions
 - Include administrators if you want the same process for repo owners
+
+## Cloudflare Deploy Secrets
+
+Repository-owned deploy workflows require a GitHub token or GitHub App with `workflows` permission before `.github/workflows/` files can be pushed. The active deployment path is the GitHub Actions `Deploy` workflow using Wrangler. Editing `.github/workflows/` requires a GitHub credential or GitHub App with `workflow`/Workflows permission.
 
 ## Dependabot Auto-Merge Policy
 

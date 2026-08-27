@@ -12,11 +12,12 @@
 
 - Créer ou revendiquer la fiche Google Business Profile.
 - Ajouter le site dans Google Search Console.
-- Soumettre `https://votre-domaine.fr/sitemap-index.xml`.
+- Soumettre `https://kmis-kravmaga.fr/sitemap-index.xml`.
 - Ajouter le site dans Bing Webmaster Tools.
-- Ajouter le lien du site sur HelloAsso, Facebook, Instagram et les annuaires locaux.
+- Ajouter le lien du site sur HelloAsso, Facebook, Instagram, Google Business Profile, Bing Webmaster Tools et les annuaires locaux.
 - Demander à la mairie de Limeil-Brévannes d’ajouter ou mettre à jour la page association.
 - Publier une actualité lors de la rentrée, d’un stage, d’une porte ouverte ou d’un changement d’horaire.
+- Ajouter des photos réelles validées : instructeur, salle, ambiance de cours, stage.
 
 ## Mots-clés principaux
 
@@ -27,6 +28,12 @@
 - krav maga boissy-saint-léger
 - krav maga valenton
 - krav maga bonneuil-sur-marne
+
+## Maintenance
+
+- Utiliser `docs/UPDATE-RUNBOOK.md` pour les mises à jour rentrée, stage, horaires, tarifs, photos et contact.
+- Garder les faits d’association, liens, horaires et checklists dans `src/site.config.ts` quand c’est possible.
+- Après chaque changement SEO visible, vérifier le sitemap, la balise canonique et le JSON-LD dans le HTML généré.
 
 ## Ce qu’il faut éviter
 

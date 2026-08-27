@@ -1,11 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="KM">
-  <path
-    d="M20 84V35h13v19l17-19h16L45 58l23 26H51L33 62v22H20Zm52 0V35h14l14 23 14-23h14v49h-13V57l-11 18h-8L85 57v27H72Z"
-    transform="translate(0 4)"
-    fill="#f0b429"
-    stroke="#0b0f14"
-    stroke-width="4"
-    stroke-linejoin="round"
-    paint-order="stroke fill"
-  />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="KMIS">
+  <clipPath id="logo-mask">
+    <circle cx="64" cy="64" r="64" />
+  </clipPath>
+  <image href="/logo-kmis.png" width="128" height="128" preserveAspectRatio="xMidYMid slice" clip-path="url(#logo-mask)" />
 </svg>

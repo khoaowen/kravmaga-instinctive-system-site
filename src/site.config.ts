@@ -18,6 +18,8 @@ export const site = {
   facebook: '',
   instagram: '',
   helloAsso: '',
+  registrationFormUrl: 'https://tally.so/embed/9qr6z4?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1',
+  registrationStorage: 'Tally + Google Sheets / Google Drive',
   googleMapsUrl: 'https://maps.app.goo.gl/L1E88EpVu8cm3wdx7',
   googleMapsEmbedUrl: 'https://www.google.com/maps?q=Krav%20Maga%20instinctive%20system%2C%20Limeil-Br%C3%A9vannes&ll=48.7431246,2.4818055&z=16&output=embed',
   latitude: 48.7431246,
@@ -42,11 +44,54 @@ export const schedule = [
 ];
 
 export const prices = [
-  { label: 'Cours d’essai', amount: 'Tarifs communiqués prochainement' },
-  { label: 'Cotisation annuelle adulte', amount: 'Tarifs communiqués prochainement' },
-  { label: 'Cotisation annuelle ado', amount: 'Tarifs communiqués prochainement' },
-  { label: 'Licence / assurance', amount: 'Tarifs communiqués prochainement' }
+  {
+    category: 'Adulte',
+    membership: '230 €',
+    license: '24 €',
+    discount: '0 %',
+    total: '254 €'
+  },
+  {
+    category: 'Famille adulte',
+    membership: '230 €',
+    license: '24 €',
+    discount: '50 % sur la cotisation',
+    total: '139 €',
+    comment: 'Pour le 2ème adulte'
+  },
+  {
+    category: 'Étudiant / demandeur d’emploi',
+    membership: '230 €',
+    license: '24 €',
+    discount: '15 % sur la cotisation',
+    total: '219 €'
+  }
 ];
+
+export const trialLesson = {
+  whatsappText: `Bonjour, je souhaite faire un cours d’essai de Krav Maga à Limeil-Brévannes.`,
+  emailSubject: `Cours d’essai Krav Maga à Limeil-Brévannes`,
+  beginnerReassurance:
+    'Le cours d’essai est ouvert aux débutants. L’objectif est de découvrir le cadre, l’ambiance et les bases, sans pression de performance.',
+  messageChecklist: [
+    'Nom et prénom',
+    'Âge',
+    'Niveau sportif ou expérience en arts martiaux',
+    'Créneau souhaité : lundi ou jeudi soir',
+    'Question particulière ou contrainte à signaler'
+  ],
+  bringChecklist: [
+    'Tenue de sport confortable',
+    'Bouteille d’eau',
+    'Chaussures propres si la salle le demande',
+    'Protège-dents ou coquille si vous en avez déjà, sinon ce n’est pas bloquant pour essayer'
+  ],
+  firstClassNotes: [
+    'Arrivez quelques minutes avant le début du cours.',
+    'Prévenez l’instructeur si vous avez une blessure ou une contrainte médicale.',
+    'Les exercices sont expliqués progressivement et adaptés au niveau du groupe.'
+  ]
+};
 
 export const instructor = {
   name: 'Laurent Mays',
@@ -92,6 +137,27 @@ export const instructor = {
   // Lien officiel pour vérifier la carte professionnelle.
   registryUrl: 'https://eapspublic.sports.gouv.fr'
 };
+
+export const photos = [
+  {
+    src: instructor.photo,
+    alt: `Laurent Mays, instructeur de Krav Maga à Limeil-Brévannes`,
+    title: 'Instructeur',
+    text: 'Une présentation claire de l’encadrement aide les nouveaux pratiquants à se projeter avant le premier contact.'
+  },
+  {
+    src: '/images/principes-krav-maga.jpg',
+    alt: `Entraînement de Krav Maga et self-défense à Limeil-Brévannes`,
+    title: 'Ambiance de cours',
+    text: 'Les photos réelles de salle, groupe ou stage sont à privilégier dès qu’elles sont disponibles et validées pour publication.'
+  },
+  {
+    src: '/logo-kmis.png',
+    alt: `Krav Maga Instinctive System, association de Krav Maga à Limeil-Brévannes`,
+    title: 'Association',
+    text: 'Le logo reste un repère utile, mais il doit compléter les photos terrain plutôt que les remplacer.'
+  }
+];
 
 // Les 7 principes du Krav Maga d’Imi Lichtenfeld, rédigés en clair.
 export const principles = [
