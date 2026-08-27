@@ -38,7 +38,7 @@ jobs:
   visual-regression:
     name: Visual regression
     runs-on: ubuntu-latest
-    container: mcr.microsoft.com/playwright:v1.54.0-noble
+    container: mcr.microsoft.com/playwright:v1.62.1-noble
     timeout-minutes: 15
 
     steps:
