@@ -11,9 +11,9 @@
     "test:visual:update": "playwright test --update-snapshots"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.10",
+    "@astrojs/check": "0.9.12",
     "@astrojs/sitemap": "3.7.4",
-    "astro": "7.4.0",
+    "astro": "7.4.4",
     "typescript": "6.0.3"
   },
   "overrides": {
