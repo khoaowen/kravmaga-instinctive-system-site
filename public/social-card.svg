@@ -6,7 +6,7 @@
   <clipPath id="logo-mask">
     <circle cx="895" cy="315" r="150"/>
   </clipPath>
-  <image href="/logo-kmis.png" x="745" y="165" width="300" height="300" preserveAspectRatio="xMidYMid slice" clip-path="url(#logo-mask)"/>
+  <image href="/logo-kmis.png?v=rhino-20261124" x="745" y="165" width="300" height="300" preserveAspectRatio="xMidYMid slice" clip-path="url(#logo-mask)"/>
   <text x="110" y="205" fill="#f0b429" font-family="Arial, sans-serif" font-size="36" font-weight="700">KRAV MAGA À LIMEIL-BRÉVANNES</text>
   <text x="110" y="305" fill="#f5f7fb" font-family="Arial, sans-serif" font-size="72" font-weight="900">Krav Maga Instinctive</text>
   <text x="110" y="390" fill="#f5f7fb" font-family="Arial, sans-serif" font-size="72" font-weight="900">System</text>
