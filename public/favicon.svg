@@ -2,5 +2,5 @@
   <clipPath id="logo-mask">
     <circle cx="64" cy="64" r="64" />
   </clipPath>
-  <image href="/logo-kmis.png?v=rhino-20261124" width="128" height="128" preserveAspectRatio="xMidYMid slice" clip-path="url(#logo-mask)" />
+  <image href="/logo-kmis.png?v=courage-20261127" width="128" height="128" preserveAspectRatio="xMidYMid slice" clip-path="url(#logo-mask)" />
 </svg>
